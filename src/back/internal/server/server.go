@@ -1,10 +1,7 @@
 package server
 
 import (
-	"database/sql"
-	"fmt"
 	"net/http"
-	"os"
 
 	"github.com/ICEI-PUC-Minas-PCO-SI/2025-1-p3-tiapn-si-grupo-4/domain/app/handlers"
 	"github.com/ICEI-PUC-Minas-PCO-SI/2025-1-p3-tiapn-si-grupo-4/domain/app/usecases"
@@ -23,32 +20,7 @@ type app struct {
 	helloHandler *handlers.HelloHandler
 }
 
-func NewApp(httpServer *http.Server) *app {
-
-	user := os.Getenv("DATABASE_USER")
-	pass := os.Getenv("DATABASE_PASSWORD")
-	host := os.Getenv("DATABASE_HOST")
-	port := os.Getenv("DATABASE_PORT")
-	name := os.Getenv("DATABASE_NAME")
-	connstring := fmt.Sprintf(
-		"%s:%s@tcp(%s:%s)/%s?parseTime=true",
-		user,
-		pass,
-		host,
-		port,
-		name,
-	)
-	db, err := sql.Open("mysql", connstring)
-	if err != nil {
-		logrus.Error(err)
-		panic(err)
-	}
-
-	if err := db.Ping(); err != nil {
-		panic(err)
-	}
-
-	queries := store.New(db)
+func NewApp(httpServer *http.Server, queries *store.Queries) *app {
 
 	//setup repositories
 	logRepository := repositories.NewMysqlLogRepository(queries)

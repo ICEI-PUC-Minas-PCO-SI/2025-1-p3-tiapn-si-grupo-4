@@ -1,0 +1,11 @@
+CREATE TABLE users (
+    id VARCHAR(255) NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    idade INTEGER NOT NULL,
+    genero VARCHAR(30),
+    email VARCHAR(50) UNIQUE NOT NULL,
+    craeted_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    goal TEXT NOT NULL,
+
+    PRIMARY KEY (email)
+);

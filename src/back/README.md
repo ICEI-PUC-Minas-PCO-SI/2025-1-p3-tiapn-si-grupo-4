@@ -16,7 +16,7 @@ make up && make logs
 Aplicação backend de uma plataforma de healthcare para todas as pessoas portadoras da doença Diabetes Mellitus , tipo 1 e tipo 2. Com ferramentas para contagem de carboidratos e informações para melhoria da qualidade de vida do diabético e daqueles que buscam se prevenir e garantir a qualidade de vida..
 
 Utiliza `sqlc` para gerar as interfaces das entidades das tabelas dos bancos de dados (não é um ORM) e as queries SQL.
-Utiliza o `tern` para criar e executar as migations.
+Utiliza o `migrate` para criar e executar as migations.
 
 
 ## Go generate
@@ -38,8 +38,10 @@ Utiliazando o tern para criar migrações, mas para executar com o ambiente loca
 utiliza o `os\exec` do go para rodar comandos no ambiente
 
 ```shell
-go run ./cmd/tools/terndotenv/main.go
+go run ./main.go migrate ***nome da migration***
 ```
+
+
 
 ## Queries
 

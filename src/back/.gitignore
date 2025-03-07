@@ -4,4 +4,3 @@ tmp
 
 # Ignorar arquivos de debug
 internal/api/__debug*
-main

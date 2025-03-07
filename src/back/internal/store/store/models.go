@@ -17,3 +17,13 @@ type Log struct {
 	Source     sql.NullString
 	CreatedAt  time.Time
 }
+
+type User struct {
+	ID        string
+	Nome      string
+	Idade     int32
+	Genero    sql.NullString
+	Email     string
+	CraetedAt time.Time
+	Goal      string
+}
