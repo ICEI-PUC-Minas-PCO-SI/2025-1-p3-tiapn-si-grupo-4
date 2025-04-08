@@ -16,16 +16,12 @@ Esse problema se aplica a qualquer operação que envolva rotinas idênticas exe
 
 ## Objetivos
 
-O propósito da organização consiste em prestar assistência às pessoas que necessitam exercer controle sobre sua taxa de insulina, visando a um gerenciamento mais abrangente e a minimização de potenciais crises iminentes. Almeja-se proporcionar um maior conforto ao indivíduo, permitindo que ele se concentre integralmente em sua qualidade de vida. Adicionalmente, percebe-se a necessidade e a responsabilidade de educar indivíduos acerca deste tema de extrema gravidade, o diabetes mellitus, adotando medidas preventivas e proativas para o eficaz manejo desta condição.
+O propósito da organização consiste em prestar assistência a pessoas e empresas que necessitam exercer controle sobre varios processos e rotinas iguais ou similares ocorrendo ao mesmo tempo, visando a um gerenciamento mais abrangente e a minimização de potenciais crises iminentes. Almeja-se otimizar o gerenciamento de rotinas executadas simultaneamente, garantindo a alocação eficiente de recursos, evitando conflitos e duplicações, proporcionando coordenação em tempo real para operadores e proporcionando uma facil contextualização.
 
 ## Justificativa
 
-O projeto nasceu com a análise de um problema simples, porem de demasiada importância, a dificuldade do diabético de calcular quanto de carboidratos tem em cada alimento para a aplicação equivalente de insulina para o equilíbrio da glicose, além do combate da desinformação sobre o assunto.
-
-A aplicação permitira o cálculo em tempo real de carboidratos em cada alimento e não só isso, ela entregara usuário informações e procedimentos que contribuam e facilitam a vida do diabético.
+A justificativa para o desenvolvimento desse software reside na necessidade de eliminar os conflitos, duplicações e ineficiências causados pela execução simultânea de rotinas idênticas, como em uma locadoras, onde a falta de coordenação pode levar a erros como a alocação do mesmo item a múltiplos clientes, resultando em atrasos, desperdício de recursos e insatisfação, problemas que impactam diretamente a operação e a experiência do usuário.
 
 ## Público-Alvo
 
-Indivíduos portadores de Diabetes tipo 1 e tipo 2, de todas as idades, assim como aqueles que têm familiares e amigos com Diabetes, encontram neste conteúdo um recurso valioso. Incluem-se aqui pessoas que buscam melhorar sua qualidade de vida através do cálculo para aplicação de insulina e que desejam obter dicas para aprimorar seus níveis glicêmicos. Não obstante, esta aplicação é relevante para pessoas não diabéticas que almejam otimizar seus níveis glicêmicos, visando evitar o desenvolvimento futuro da doença.
-
-Também abrange estudantes e acadêmicos da área de saúde, bem como qualquer indivíduo que busque informações complementares sobre a Diabetes por meio de texto ou vídeo. Seja por curiosidade ou com fins didáticos, essa fonte é uma ferramenta útil para orientar-se sobre o assunto. Assim, estudantes e acadêmicos da área da saúde encontram aqui um recurso para aprofundar sua compreensão sobre o tema.
+O público-alvo seriam operadores e gestores de negócios, como atendentes e administradores de locadoras de carros, hotéis, ou empresas de e-commerce, que precisam de coordenação eficiente para gerenciar recursos compartilhados em tempo real.
