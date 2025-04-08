@@ -24,11 +24,11 @@ Apresente aqui uma descrição da sua proposta, abordando seus limites e suas li
 
 ![image](https://github.com/user-attachments/assets/c60a333b-daa3-4c52-bddd-6ceb971814bc)
 
-Criado fluxo paralelo de verificação das máquinas e rotina administrativa para mais agilidade.
+- Criado fluxo paralelo de verificação das máquinas e rotina administrativa para mais agilidade.
 
-Incrementado feedback para o cliente informando sobre a decisão de não continuar com a solicitação caso sejam encontrados dividendos e os mesmos sejam considerados de risco.
+- Incrementado feedback para o cliente informando sobre a decisão de não continuar com a solicitação caso sejam encontrados dividendos e os mesmos sejam considerados de risco.
 
-Reunião sobre o escopo do projeto foi movida para antes do envio de contrato, possibilitando assim uma melhor tomada de decisões.
+- Reunião sobre o escopo do projeto foi movida para antes do envio de contrato, possibilitando assim uma melhor tomada de decisões.
 
 ### Processo 2 - Troca de Peças:
 
