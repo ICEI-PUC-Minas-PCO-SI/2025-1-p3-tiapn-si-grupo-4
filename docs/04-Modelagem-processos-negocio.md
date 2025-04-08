@@ -20,6 +20,18 @@ Cole aqui os modelos da solução proposta (modelo TO-BE), elaborados com o apoi
 
 Apresente aqui uma descrição da sua proposta, abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente também as oportunidades de melhoria.
 
+### Processo 1 - Aluguel de Máquinas:
+
+![image](https://github.com/user-attachments/assets/c60a333b-daa3-4c52-bddd-6ceb971814bc)
+
+Criado fluxo paralelo de verificação das máquinas e rotina administrativa para mais agilidade.
+
+Incrementado feedback para o cliente informando sobre a decisão de não continuar com a solicitação caso sejam encontrados dividendos e os mesmos sejam considerados de risco.
+
+Reunião sobre o escopo do projeto foi movida para antes do envio de contrato, possibilitando assim uma melhor tomada de decisões.
+
+### Processo 2 - Troca de Peças:
+
 ## Modelagem dos processos
 
 [PROCESSO 1 - Nome do processo](./processes/processo-1-nome-do-processo.md "Detalhamento do processo 1.")
