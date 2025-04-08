@@ -1,22 +1,18 @@
 # Introdução
 
-Atualmente, o Brasil ocupa a quinta posição no ranking de países com maior incidência de diabetes no mundo, com 
-16,8 milhões de adultos afetados, ficando atrás apenas da China, Índia, Estados Unidos e Paquistão. A estimativa 
-aponta para um aumento na incidência da doença, que poderá atingir 21,5 milhões de casos até 2030, conforme dados 
-do Atlas do Diabetes da Federação Internacional de Diabetes (IDF).
+Este documento tem como objetivo definir os requisitos, escopo e diretrizes para o desenvolvimento do software [NOME DO SOFTWARE], uma solução projetada para otimizar a gestão de tarefas com passos pré-estabelecidos. Ele serve como um guia para a equipe de desenvolvimento, stakeholders e demais envolvidos, garantindo alinhamento sobre as funcionalidades, limitações e expectativas do projeto.
 
-O nosso propósito é disponibilizar aos usuários do sistema ferramentas para a contagem de carboidratos, juntamente com 
-informações essenciais sobre o assunto, permitindo também o cálculo dos níveis ideais de glicose a serem mantidos.
+O [NOME DO SOFTWARE] será uma aplicação web destinada a facilitar o acompanhamento de tarefas e rotinas por meio de ferramentas de organização e relatórios em tempo real. O sistema abrangerá funcionalidades como cadastro de rotinas, criação de tarefas e geração de relatórios. Este projeto visa resolver a falta de visibilidade no progresso de atividades em casos em que varias atividades similiares ocorrem ao mesmo tempo, oferecendo uma solução intuitiva e eficiente.
 
 ## Cliente 
 O Hospital das Clínicas da UFMG, administrado pela Empresa Brasileira de Serviços Hospitalares (EBSERH), é um hospital universitário, público e geral que realiza atividades de ensino, pesquisa e assistência em saúde. Integrado ao SUS, é referência estadual no atendimento a patologias de média e alta complexidade. Tem como visão "Consolidar-se como Hospital Universitário Público Federal de excelência em assistência à saúde, ensino, pesquisa e inovação, a serviço dos usuários do SUS", e como propósito "Saúde, ensino, pesquisa e inovação a serviço da vida e do SUS".
 
 ## Problema
-A SBD (Sociedade Brasileira de Diabetes) e a comunidade médica responsável - endocrinologistas e pesquisadores - apontam o diagnóstico tardio e o tratamento inadequado como os principais impecilhos para melhoria do quadro da diabetes no país, e que estes problemas são oriundos da falta de informação por parte do enfermo e de seus familiares, bem como da sobrecarga da infraestrutura pública de saúde.
+Em muitos contextos operacionais,é comum que rotinas idênticas sejam executadas ao mesmo tempo por diferentes operadores ou sistemas. Embora essa simultaneidade seja essencial para atender à demanda, especialmente em períodos de pico, ela pode gerar uma série de problemas que comprometem a eficiência e a precisão do processo. Além de que diversos processos identivos ou similares gerenciados por uma mesma pessoa pode gerar confusão e perca de contexto.
 
-Tais fatores corroboram para que os diabéticos não sejam bem acessorados nesta jornada e acabem adotando doses indiscriminadas de insulina, auto-medicação e a não-prática de hábitos cruciais ao diabético, como a atividade física, alimentação adequada e a realização recorrente de exames.
+Garantir que todas as etapas de cada processo estejam alinhadas exige uma sincronia que nem sempre é natural em ambientes dinâmicos e caso paralelizados por uma unica pessoa pode gerar grande perca de contexto e perda da visão do todo. Sem uma visão clara do que está acontecendo em tempo real, os operadores podem trabalhar em desacordo, levando a atrasos ou inconsistências. Isso contribui para a ineficiência operacional, especialmente em situações de alta demanda, onde o tempo de processamento aumenta, gerando filas e impactando a experiência do cliente.
 
-Nesta ótica, faz-se necessário a o fornecimento de apoio médico e informacional para promover maior conscientização sobre o tratamento, prevenção e diagnóstico da Diabetes, afim de reduzir os números da doença no país e incentivar a melhoria da qualidade de vida.
+Esse problema se aplica a qualquer operação que envolva rotinas idênticas executadas simultaneamente, como reservas em hotéis, vendas em e-commerce ou até mesmo linhas de produção. A falta de mecanismos para gerenciar esses conflitos e alinhar as ações pode transformar uma operação potencialmente ágil em um processo caótico, com custos tanto em termos de recursos quanto de reputação.
 
 ## Objetivos
 
