@@ -1,9 +1,19 @@
-### 3.3.1 Processo 1 – NOME DO PROCESSO
+### 3.3.1 Processo 1 – Aluguel de Máquinas
 
-_Apresente aqui o nome e as oportunidades de melhoria para o processo 1. 
-Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
+####Oportunidades de melhoria:
+
+- Paralelização de atividades para reduzir tempo de espera.
+- Implementação de comunicação com clientes não aprovados.
+- Melhor alocação de reunião para garantir melhor tomada de decisões.
  
-![Exemplo de um Modelo BPMN do PROCESSO 1](../images/process.png "Modelo BPMN do Processo 1.")
+Modelo AS-IS:
+
+![image](https://github.com/user-attachments/assets/23e768d0-e995-417e-bfe4-8dd06cd7abbd)
+
+Modelo TO-BE:
+
+![image](https://github.com/user-attachments/assets/4bd5bbfc-dfdc-4fef-a621-d7c96b1bc16b)
+
 
 #### Detalhamento das atividades
 
@@ -37,22 +47,19 @@ _* **Link** - campo que armazena uma URL_
 _* **Tabela** - campo formado por uma matriz de valores_
 
 
-**Nome da atividade 1**
+**Receber solicitação de aluguel**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+| **Campo**          | **Tipo**         | **Restrições**       | **Valor default** |
+| ---                | ---              | ---                  | ---               |
+| nome_cliente       | Caixa de Texto   | obrigatório          |                   |
+| documento_cliente  | Caixa de Texto   | CPF ou CNPJ válido   |                   |
+| tipo_maquina       | Caixa de Texto   | máquinas solicitadas |                   |
+| data_necessaria    | Data             | data futura válida   |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
-
+| enviar               | Análise de risco               | default           |
+| cancelar             | Fim do processo                | cancel            |
 
 **Nome da atividade 2**
 
