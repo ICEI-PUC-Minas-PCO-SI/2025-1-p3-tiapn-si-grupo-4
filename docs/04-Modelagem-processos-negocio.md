@@ -56,7 +56,7 @@
 
 - O administrativo transfere a peça comprada para o almoxarifado antes do recebimento do mecânico, facilitando assim o controle de estoque.
 
-Nossa proposta de melhoria visa diminuir atrasos nos processos, remover inconsistências, e otimizar tarefas. Possibilitando assim um maior controle dos processos do negócio.
+Nossa proposta visa diminuir atrasos, remover inconsistências, e otimizar tarefas. Possibilitando assim um maior controle dos processos do negócio.
 
 ## Modelagem dos processos
 
