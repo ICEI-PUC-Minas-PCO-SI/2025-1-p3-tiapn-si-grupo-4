@@ -8,6 +8,18 @@
 
 ## Modelagem da situação atual (Modelagem AS IS)
 
+### Processo 1 - Alugueç de Máquinas:
+
+![image](https://github.com/user-attachments/assets/97971174-d859-4a5d-b74b-2c3707f25dfa)
+
+#### Gargalos encontrados:
+
+- O check-up das máquinas somente é realizado após o recebimento do contrato assinado, criando uma janela para atraso se não estiver tudo ok com as mesmas após confirmação do cliente sobre o aluguel.
+
+- Caso o dividendo seja considerado como risco, não é realizado contato com o cliente. Aumentando a frustração do mesmo e prejudicando a fidelização.
+
+- Somente é realizada reunião sobre o escopo do projeto após recebimento do contrato assinado pelo cliente, diminuindo a flexibilidade administrativa na tomada de decisões. 
+
 Apresente uma descrição textual de como os sistemas atuais resolvem o problema que seu projeto se propõe a resolver. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional.
 
 Com o tema do projeto definido, escolham alguns processos no contexto de negócios. Para ilustrar os potenciais ganhos com a automatização, imaginem processos manuais, ineficientes e/ou com muitas idas e vindas, gerando, assim, retrabalho. Colem aqui os modelos dos processos atuais (modelo AS-IS), elaborados com o apoio da ferramenta baseada em BPMN utilizada na disciplina.
