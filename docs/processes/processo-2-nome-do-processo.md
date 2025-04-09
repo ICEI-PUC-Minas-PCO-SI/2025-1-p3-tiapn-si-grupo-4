@@ -1,67 +1,66 @@
 ### 3.3.2 Processo 2 – NOME DO PROCESSO
+
+#### Oportunidades de melhoria:
+
+- Reduzir o tempo de máquina parada durante manutenções.
+- Delegar a compra de peças ao almoxarifado, liberando o mecânico para atividades técnicas.
+- Aumentar o controle sobre o estoque de peças.
  
-_Apresente aqui o nome e as oportunidades de melhoria para o processo 2. 
-Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
+Modelo AS-IS:
 
-![Exemplo de um Modelo BPMN do PROCESSO 2](../images/process.png "Modelo BPMN do Processo 2.")
+![image](https://github.com/user-attachments/assets/690f7e6e-496a-44c1-8fb9-9a012e4c5545)
 
+Modelo TO-BE:
+
+![image](https://github.com/user-attachments/assets/d326c508-44dc-45cf-a4af-fa99b57edebf)
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 2. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+**Identificar defeito na máquina**
 
-_Os tipos de dados a serem utilizados são:_
-
-_* **Área de texto** - campo texto de múltiplas linhas_
-
-_* **Caixa de texto** - campo texto de uma linha_
-
-_* **Número** - campo numérico_
-
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
-
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
-
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
-
-_* **Imagem** - campo contendo uma imagem_
-
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
-
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
-
-_* **Arquivo** - campo de upload de documento_
-
-_* **Link** - campo que armazena uma URL_
-
-_* **Tabela** - campo formado por uma matriz de valores_
-
-**Nome da atividade 1**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+| **Campo**          | **Tipo**         | **Restrições**         | **Valor default** |
+| ---                | ---              | ---                    | ---               |
+| id_maquina         | Caixa de Texto   | obrigatório            |                   |
+| descrição_defeito  | Área de Texto    | mínimo 20 caracteres   |                   |
+| data_ocorrência    | Data             | data atual ou anterior |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
+| ---                  | ---                            | ---      |
+| registrar            | Solicitação de peça            | default  |
+| cancelar             | Fim do processo                | cancel   |
 
+**Solicitar peça ao almoxarifado**
 
-**Nome da atividade 2**
+| **Campo**   | **Tipo**       | **Restrições**        | **Valor default** |
+| ---         | ---            | ---                   | ---               |
+| nome_peca   | Caixa de Texto | obrigatório           |                   |
+| quantidade  | Número         | mínimo 1              |                   |
+| urgência    | Seleção única  | baixa / média / alta  | média             |
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
+| **Comandos** |  **Destino**                   | **Tipo**          |
+| ---          | ---                            | ---               |
+| enviar       | Verifica estoque               | default           |
+
+**Verificar disponibilidade de peça**
+
+| **Campo**              | **Tipo**       | **Restrições**               | **Valor default** |
+| ---                    | ---            | ---                          | ---               |
+| disponibilidade        | Seleção única  | disponível / indisponível    |                   |
+| data_prevista_entrega  | Data           | se indisponível              |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+| disponível           | Autorizar retirada             | default           |
+| indisponível         | Solicitar aquisição            | default           |
+
+**Realizar troca de peça**
+
+| **Campo**            | **Tipo**       | **Restrições**           | **Valor default** |
+| ---                  | ---            | ---                      | ---               |
+| técnico_responsável  | Caixa de Texto | obrigatório              |                   |
+| data_troca           | Data e Hora    | obrigatório              |                   |
+| relatório_final      | Área de Texto  | mínimo 30 caracteres     |                   |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| concluir             | Fim do processo                | default           |
