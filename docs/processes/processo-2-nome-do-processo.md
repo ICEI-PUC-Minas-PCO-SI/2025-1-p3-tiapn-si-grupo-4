@@ -1,4 +1,4 @@
-### 3.3.2 Processo 2 – NOME DO PROCESSO
+### 3.3.2 Processo 2 – Troca de peças
 
 #### Oportunidades de melhoria:
 
