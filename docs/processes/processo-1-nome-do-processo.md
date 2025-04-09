@@ -49,7 +49,7 @@ Modelo TO-BE:
 | ---                 | ---           | ---                  | ---               |
 | estado_geral        | Seleção única | bom / regular / ruim |                   |
 | data_verificação    | Data e Hora   |                      |                   |
-| imagens equipamento | Imagem        | mínimo 2 fotos       |                   |
+| imagens_equipamento | Imagem        | mínimo 2 fotos       |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
