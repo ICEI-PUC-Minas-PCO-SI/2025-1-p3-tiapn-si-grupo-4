@@ -42,3 +42,26 @@ Modelo TO-BE:
 | ---                  | ---                            | ---               |
 | aprovar              | Atividade/processo de destino  | default           |
 | reprovar             | Fim do processo                | default           |
+
+**Verificação técnica da máquina**
+
+| **Campo**           | **Tipo**      | **Restrições**       | **Valor default** |
+| ---                 | ---           | ---                  | ---               |
+| estado_geral        | Seleção única | bom / regular / ruim |                   |
+| data_verificação    | Data e Hora   |                      |                   |
+| imagens equipamento | Imagem        | mínimo 2 fotos       |                   |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| aprovar_checkup      | Emissão de nota fiscal         | default           |
+
+**Assinar contato**
+
+| **Campo**          | **Tipo**      | **Restrições**     | **Valor default** |
+| ---                | ---           | ---                | ---               |
+| contrato_digital   | Arquivo       | PDF                |                   |
+| data_assinatura    | Data e Hora   |                    |                   |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| concluir             | Fim do processo                | default           |
