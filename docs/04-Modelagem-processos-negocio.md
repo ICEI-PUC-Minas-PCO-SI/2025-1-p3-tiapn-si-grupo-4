@@ -32,6 +32,14 @@ Apresente aqui uma descrição da sua proposta, abordando seus limites e suas li
 
 ### Processo 2 - Troca de Peças:
 
+![image](https://github.com/user-attachments/assets/78e310ab-99cd-4f25-8f89-123b51d30a00)
+
+- Delegado função de verificar estoque para setor de almoxarifado, liberando o mecânico para outras tarefas enquanto aguarda a compra e entrega da peça.
+
+- Almoxarifado solicita um reestoque da peça solicitada ao invés de comprar somente a quantidade necessária, diminuindo a necessidade de diversos contatos com os fornecedores.
+
+- O administrativo transfere a peça comprada para o almoxarifado antes do recebimento do mecânico, facilitando assim o controle de estoque.
+
 ## Modelagem dos processos
 
 [PROCESSO 1 - Nome do processo](./processes/processo-1-nome-do-processo.md "Detalhamento do processo 1.")
