@@ -32,8 +32,6 @@
 
 ## Descrição geral da proposta (Modelagem TO BE)
 
-Apresente aqui uma descrição da sua proposta, abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente também as oportunidades de melhoria.
-
 ### Processo 1 - Aluguel de Máquinas:
 
 ![image](https://github.com/user-attachments/assets/c60a333b-daa3-4c52-bddd-6ceb971814bc)
@@ -65,7 +63,6 @@ Nossa proposta de melhoria visa diminuir atrasos nos processos, remover inconsis
 [PROCESSO 1 - Nome do processo](./processes/processo-1-nome-do-processo.md "Detalhamento do processo 1.")
 
 [PROCESSO 2 - Nome do processo](./processes/processo-2-nome-do-processo.md "Detalhamento do processo 2.")
-
 
 ## Indicadores de desempenho
 
