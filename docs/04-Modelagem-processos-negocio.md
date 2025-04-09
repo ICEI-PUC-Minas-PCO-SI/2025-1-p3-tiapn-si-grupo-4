@@ -54,9 +54,9 @@ Nossa proposta visa diminuir atrasos, remover inconsistências, e otimizar taref
 
 ## Modelagem dos processos
 
-[PROCESSO 1 - Nome do processo](./processes/processo-1-nome-do-processo.md "Detalhamento do processo 1.")
+[PROCESSO 1 - Aluguel de máquinas](./processes/processo-1-nome-do-processo.md "Detalhamento do processo 1.")
 
-[PROCESSO 2 - Nome do processo](./processes/processo-2-nome-do-processo.md "Detalhamento do processo 2.")
+[PROCESSO 2 - Troca de peças](./processes/processo-2-nome-do-processo.md "Detalhamento do processo 2.")
 
 ## Indicadores de desempenho
 
