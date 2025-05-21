@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Projetos\\Puc\\TIAPN\\2025-1-p3-tiapn-si-grupo-4\\src\\back\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BA9D6E4E-FD35-4F55-8926-4980F6902382}|back.csproj|e:\\projetos\\puc\\tiapn\\2025-1-p3-tiapn-si-grupo-4\\src\\back\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA9D6E4E-FD35-4F55-8926-4980F6902382}|back.csproj|solutionrelative:controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA9D6E4E-FD35-4F55-8926-4980F6902382}|back.csproj|e:\\projetos\\puc\\tiapn\\2025-1-p3-tiapn-si-grupo-4\\src\\back\\models\\usuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA9D6E4E-FD35-4F55-8926-4980F6902382}|back.csproj|solutionrelative:models\\usuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA9D6E4E-FD35-4F55-8926-4980F6902382}|back.csproj|e:\\projetos\\puc\\tiapn\\2025-1-p3-tiapn-si-grupo-4\\src\\back\\dtos\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA9D6E4E-FD35-4F55-8926-4980F6902382}|back.csproj|solutionrelative:dtos\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA9D6E4E-FD35-4F55-8926-4980F6902382}|back.csproj|e:\\projetos\\puc\\tiapn\\2025-1-p3-tiapn-si-grupo-4\\src\\back\\data\\usuariocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA9D6E4E-FD35-4F55-8926-4980F6902382}|back.csproj|solutionrelative:data\\usuariocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA9D6E4E-FD35-4F55-8926-4980F6902382}|back.csproj|e:\\projetos\\puc\\tiapn\\2025-1-p3-tiapn-si-grupo-4\\src\\back\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA9D6E4E-FD35-4F55-8926-4980F6902382}|back.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsuarioDTO.cs",
+              "DocumentMoniker": "E:\\Projetos\\Puc\\TIAPN\\2025-1-p3-tiapn-si-grupo-4\\src\\back\\DTOs\\UsuarioDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\UsuarioDTO.cs",
+              "ToolTip": "E:\\Projetos\\Puc\\TIAPN\\2025-1-p3-tiapn-si-grupo-4\\src\\back\\DTOs\\UsuarioDTO.cs",
+              "RelativeToolTip": "DTOs\\UsuarioDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T18:10:58.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Projetos\\Puc\\TIAPN\\2025-1-p3-tiapn-si-grupo-4\\src\\back\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\Projetos\\Puc\\TIAPN\\2025-1-p3-tiapn-si-grupo-4\\src\\back\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T17:54:15.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsuarioModel.cs",
+              "DocumentMoniker": "E:\\Projetos\\Puc\\TIAPN\\2025-1-p3-tiapn-si-grupo-4\\src\\back\\Models\\UsuarioModel.cs",
+              "RelativeDocumentMoniker": "Models\\UsuarioModel.cs",
+              "ToolTip": "E:\\Projetos\\Puc\\TIAPN\\2025-1-p3-tiapn-si-grupo-4\\src\\back\\Models\\UsuarioModel.cs",
+              "RelativeToolTip": "Models\\UsuarioModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T14:41:45.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsuarioContext.cs",
+              "DocumentMoniker": "E:\\Projetos\\Puc\\TIAPN\\2025-1-p3-tiapn-si-grupo-4\\src\\back\\Data\\UsuarioContext.cs",
+              "RelativeDocumentMoniker": "Data\\UsuarioContext.cs",
+              "ToolTip": "E:\\Projetos\\Puc\\TIAPN\\2025-1-p3-tiapn-si-grupo-4\\src\\back\\Data\\UsuarioContext.cs",
+              "RelativeToolTip": "Data\\UsuarioContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T14:40:30.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "E:\\Projetos\\Puc\\TIAPN\\2025-1-p3-tiapn-si-grupo-4\\src\\back\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsuarioController.cs",
+              "ToolTip": "E:\\Projetos\\Puc\\TIAPN\\2025-1-p3-tiapn-si-grupo-4\\src\\back\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAqwGgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T14:29:59.216Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

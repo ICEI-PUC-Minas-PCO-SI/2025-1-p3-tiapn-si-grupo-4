@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 ![header](https://capsule-render.vercel.app/api?type=venom&color=auto&height=400&section=header&text=Teste%20VR&fontSize=90&rotate=10)
 
 ![go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)![mysql](https://img.shields.io/badge/MySQL-316192?style=for-the-badge&logo=mysql&logoColor=white)
@@ -162,3 +163,6 @@ Executar testes service core
 ```shell
 make test-service-core
 ```
+=======
+Utilizar .NET 8.0
+>>>>>>> 3c395106eeb015d36b76f68df663a1968e7071b6
