@@ -29,6 +29,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.ExempleRoutes();
+app.RotinaTemplateRoutes();
 
 app.UseHttpsRedirection();
 app.Run();
