@@ -13,8 +13,7 @@ public class EmpresaModel
     public bool Ativo { get; private set; }
 
     public void UpdateName(string nome) => Nome = nome;
-    public void UpdateEmail(string? email) => Email = email;
-    public void UpdateCPF(string? cnpj) => Cnpj = cnpj;
+    public void UpdateCnpj(string? cnpj) => Cnpj = cnpj;
     public void SetInactive() => Ativo = false;
     
 }

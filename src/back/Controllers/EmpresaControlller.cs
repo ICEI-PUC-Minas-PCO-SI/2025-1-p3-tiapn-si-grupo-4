@@ -7,7 +7,7 @@ namespace back.Controllers
 {
     public static class EmpresaController
     {
-        public static void UsuarioRoutes(this WebApplication app)
+        public static void EmpresaRoutes(this WebApplication app)
         {
             var route = app.MapGroup("empresa");
 
@@ -30,7 +30,7 @@ namespace back.Controllers
                 {
                     try
                     {
-                        var empresa = new EmpresaModel(req.Nome);
+                        var empresa = new EmpresaModel(req.Nome,req.Cnpj);
                         await context.AddAsync(empresa);
                         await context.SaveChangesAsync();
                         return Results.Ok();
@@ -54,23 +54,10 @@ namespace back.Controllers
                     {
                         empresa.UpdateName(req.Nome);
                     }
-                    if (!string.IsNullOrWhiteSpace(req.Email))
+                    if (!string.IsNullOrWhiteSpace(req.Cnpj))
                     {
-                        empresa.UpdateEmail(req.Email);
+                        empresa.UpdateName(req.Cnpj);
                     }
-                    if (!string.IsNullOrWhiteSpace(req.CPF))
-                    {
-                        empresa.UpdateCPF(req.CPF);
-                    }
-                    if (!string.IsNullOrWhiteSpace(req.Celular))
-                    {
-                        empresa.UpdateCelular(req.Celular);
-                    }
-                    if (req.NivelAcesso.HasValue)
-                    {
-                        empresa.UpdateNivelAcesso(req.NivelAcesso);
-                    }
-
                     await context.SaveChangesAsync();
                     return Results.Ok(empresa);
                 }
