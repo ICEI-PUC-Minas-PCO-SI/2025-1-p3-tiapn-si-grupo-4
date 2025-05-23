@@ -75,7 +75,35 @@ namespace back.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Logs");
+                    b.ToTable("LOGS", "dbo");
+                });
+
+            modelBuilder.Entity("back.Models.LoginModel", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("Login")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int>("UsuarioID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("UsuarioID");
+
+                    b.ToTable("LOGIN", "dbo");
                 });
 
             modelBuilder.Entity("back.Models.RotinaTemplateModel", b =>
@@ -110,6 +138,64 @@ namespace back.Migrations
                     b.HasIndex(new[] { "Nome" }, "idx_template_rotina_nome");
 
                     b.ToTable("TEMPLATE_ROTINAS", "dbo");
+                });
+
+            modelBuilder.Entity("back.Models.UserModel", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("CPF")
+                        .IsRequired()
+                        .HasMaxLength(14)
+                        .HasColumnType("varchar(14)");
+
+                    b.Property<string>("Celular")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int>("NivelAcesso")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex(new[] { "CPF" }, "idx_usuario_cpf")
+                        .IsUnique();
+
+                    b.HasIndex(new[] { "Email" }, "idx_usuario_email")
+                        .IsUnique();
+
+                    b.HasIndex(new[] { "Nome" }, "idx_usuario_nome");
+
+                    b.ToTable("USERS", "dbo");
+                });
+
+            modelBuilder.Entity("back.Models.LoginModel", b =>
+                {
+                    b.HasOne("back.Models.UserModel", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("back.Models.RotinaTemplateModel", b =>

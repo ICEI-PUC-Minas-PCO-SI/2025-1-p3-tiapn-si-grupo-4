@@ -203,4 +203,14 @@ docker compose up db migrations
 
 ---
 
-Dessa forma, todo o ciclo de vida do seu ambiente de desenvolvimento será gerenciado pelo Docker Compose, garantindo que suas migrações sejam aplicadas antes que a aplicação tente se conectar ao banco de dados.
+### 4. Criar migrations e atualizar o banco
+
+Criar a migration
+```
+dotnet ef migrations add <nome da migration>
+```
+
+Subir para o banco
+```
+dotnet ef database update 
+```
