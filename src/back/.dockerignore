@@ -1,0 +1,9 @@
+data/
+*.log
+*.tmp
+node_modules/
+bin/
+obj/
+.db/
+
+.env

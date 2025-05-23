@@ -1,80 +1,55 @@
-## Arquivo .sql
+Utilizamos sql_server para nosso banco de dados, e executamos o banco via docker.
 
-Adicione aqui os scripts SQL.
+# Pré-Requisitos
 
-```sql
--- Habilitar a extensão UUID (se necessário, alguns bancos de dados já têm isso habilitado)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+## Instalação do WSL
+Tenha certeza que o WSL esteja em sua maquina para o docker poder rodar sem problemas
 
--- Tabela para armazenar informações dos usuários
-CREATE TABLE Usuarios (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(), -- UUID gerado automaticamente
-    username VARCHAR(255) UNIQUE NOT NULL,
-    nome VARCHAR(255) NOT NULL,
-    email VARCHAR(255) UNIQUE,
-    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    ativo BOOLEAN DEFAULT TRUE
-    -- Outros campos relevantes para o usuário podem ser adicionados aqui
-);
-
--- Tabela para armazenar informações das organizações
-CREATE TABLE Organizacoes (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(), -- UUID gerado automaticamente
-    nome VARCHAR(255) NOT NULL,
-    descricao TEXT,
-    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    -- Outros campos relevantes para a organização podem ser adicionados aqui
-);
-
--- Tabela de junção para relacionar usuários e organizações (muitos-para-muitos)
-CREATE TABLE Usuario_Organizacao (
-    usuario_id UUID,
-    organizacao_id UUID,
-    funcao VARCHAR(255),
-    data_entrada TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (usuario_id, organizacao_id),
-    FOREIGN KEY (usuario_id) REFERENCES Usuarios(id),
-    FOREIGN KEY (organizacao_id) REFERENCES Organizacoes(id)
-);
-
--- Tabela para Quadros (Boards)
-CREATE TABLE Quadros (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    organizacao_id UUID, -- Chave estrangeira para a organização
-    nome VARCHAR(255) NOT NULL,
-    descricao TEXT,
-    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (organizacao_id) REFERENCES Organizacoes(id)
-);
-
--- Tabela para Listas
-CREATE TABLE Listas (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    quadro_id UUID,       -- Chave estrangeira para o quadro
-    nome VARCHAR(255) NOT NULL,
-    posicao INT,         -- Ordem da lista no quadro
-    FOREIGN KEY (quadro_id) REFERENCES Quadros(id)
-);
-
--- Tabela para Cartões (Cards)
-CREATE TABLE Cartoes (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    lista_id UUID,        -- Chave estrangeira para a lista
-    titulo VARCHAR(255) NOT NULL,
-    descricao TEXT,
-    posicao INT,         -- Ordem do cartão na lista
-    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    data_vencimento TIMESTAMP, -- Opcional: data de entrega
-    FOREIGN KEY (lista_id) REFERENCES Listas(id)
-);
-
--- Tabela de junção para Atribuições de Cartões a Usuários
-CREATE TABLE Atribuicoes_Cartoes (
-    cartao_id UUID,
-    usuario_id UUID,
-    data_atribuicao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (cartao_id, usuario_id),
-    FOREIGN KEY (cartao_id) REFERENCES Cartoes(id),
-    FOREIGN KEY (usuario_id) REFERENCES Usuarios(id)
-);
+- Você pode ir para pagina da microsoft que explica sobre esse processo [Download WSL](https://learn.microsoft.com/pt-br/windows/wsl/install)
+- Ou simplesmente rodar o seguinte comando no terminal/PowerShell
+```PowerShell 
+wsl --install
 ```
+
+## Instalação do Docker
+Tenha certeza de que você possui o Docker instalado em sua maquina, caso não tenha você pode fazer o download por aqui [Download Docker](https://www.docker.com/products/docker-desktop/)
+
+## Download da imagem do SQL_Server
+Faça o download da imagem do SQL_Server pelo site da propria microsoft [Microsoft Artifact Registry](https://mcr.microsoft.com), em caso de duvidas segue um passo de como fazer esse download;
+
+<ins>A partir do link filtre por "**Database**"</ins>
+![db_tutorial_1](../../docs/images/db_tutorial_1.png)
+
+<ins>Selecione "**Microsoft SQL Server - Ubuntu based images**"</ins>
+![db_tutorial_2](../../docs/images/db_tutorial_2.png)
+
+<ins>Em "tags" procure pela release "2022-latest" e copie o comando docker</ins>
+![db_tutorial_3](../../docs/images/db_tutorial_3.png)
+
+<ins>Rode o comando docker em um terminal</ins>
+
+# Subida do banco
+
+## Subir a imagem no docker
+
+Para a subida da imagem docker pode ser feita rodando o seguinte comando em um terminal
+```PoweShell
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Routix123321!" -p 1433:1433  --name routix_db --hostname routix -d mcr.microsoft.com/mssql/server:2022-latest
+```
+
+## Conexão ao banco
+A conexão ao banco pode variar entre SGBDs então segue os parametros comuns a eles, para a realizar a conexão basta fazer a composição desses parametros para seu SGBD
+
+- URL: jdbc:sqlserver://;serverName=localhost;databaseName=master
+- HOST: localhost
+- Porta: 1433
+- Banco de dados/esquema: master
+- Autenticação: SQL Server Authentication
+- Nome de Usuario: sa
+- Senha: Routix123321!
+
+## Criação de tabelas
+Nesta pasta você encontra-ra um arquivo DDL.sql contendo o script para a criação de todas as tabelas de acordo com a modelagem previamente proposta, basta abrir o arquivo em seu SGBD, ou copiar o script diretamente, e executa-lo no banco
+
+## População do banco
+Ainda será criado um arquivo DML.sql contendo o script para população inicial do banco

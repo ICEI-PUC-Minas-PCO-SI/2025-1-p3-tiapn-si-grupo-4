@@ -1,14 +1,15 @@
-FROM golang:latest
-
-WORKDIR /app
-
-
-
-COPY go.mod go.sum ./
-RUN go install github.com/air-verse/air@latest
-
+# Build stage
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY back.csproj .
+RUN dotnet restore
 COPY . .
+RUN dotnet publish -c Release -o /app/publish
 
+# Runtime stage
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
+WORKDIR /app
+COPY --from=build /app/publish .
 EXPOSE 3000
-
-CMD air
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENTRYPOINT ["dotnet", "back.dll"]

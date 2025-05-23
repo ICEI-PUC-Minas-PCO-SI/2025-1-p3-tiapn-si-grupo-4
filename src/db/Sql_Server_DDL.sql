@@ -1,0 +1,159 @@
+-- Tabela EMPRESA
+CREATE TABLE EMPRESA (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    CNPJ VARCHAR(20) NOT NULL UNIQUE,
+    Ativo BIT DEFAULT 1
+);
+
+-- Índices para EMPRESA
+CREATE INDEX idx_empresa_nome ON EMPRESA(Nome);
+CREATE INDEX idx_empresa_cnpj ON EMPRESA(CNPJ);
+
+-- Tabela TEMPLATE_ROTINA
+CREATE TABLE TEMPLATE_ROTINA (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    Empresa INT NOT NULL,
+    Prioridade INT,
+    Descricao VARCHAR(255),
+    Ativo BIT DEFAULT 1,
+    FOREIGN KEY (Empresa) REFERENCES EMPRESA(ID)
+);
+
+-- Índice para TEMPLATE_ROTINA
+CREATE INDEX idx_template_rotina_nome ON TEMPLATE_ROTINA(Nome);
+
+-- Tabela TEMPLATE_TAREFA
+CREATE TABLE TEMPLATE_TAREFA (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    Rotina INT NOT NULL,
+    Pai INT,
+    Prioridade INT,
+    Ativo BIT DEFAULT 1,
+    FOREIGN KEY (Rotina) REFERENCES TEMPLATE_ROTINA(ID) ON DELETE CASCADE,
+    FOREIGN KEY (Pai) REFERENCES TEMPLATE_TAREFA(ID) ON DELETE NO ACTION
+);
+
+-- Índice para TEMPLATE_TAREFA
+CREATE INDEX idx_template_tarefa_nome ON TEMPLATE_TAREFA(Nome);
+
+-- Tabela INSUMO
+CREATE TABLE INSUMO (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    Descricao VARCHAR(255), -- Alterado de INT para VARCHAR(255), pois parece mais apropriado
+    Tarefa INT NOT NULL,
+    FOREIGN KEY (Tarefa) REFERENCES TEMPLATE_TAREFA(ID) ON DELETE CASCADE
+);
+
+-- Índice para INSUMO
+CREATE INDEX idx_insumo_nome ON INSUMO(Nome);
+
+-- Tabela TAREFA
+CREATE TABLE TAREFA (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Tarefa INT NOT NULL,
+    Nome VARCHAR(255) NOT NULL,
+    Foi_Executada BIT,
+    DataInicio DATE,
+    DataFim DATE,
+    FOREIGN KEY (Tarefa) REFERENCES TEMPLATE_TAREFA(ID)
+);
+
+-- Índices para TAREFA
+CREATE INDEX idx_tarefa_data_inicio ON TAREFA(DataInicio);
+CREATE INDEX idx_tarefa_data_fim ON TAREFA(DataFim);
+
+-- Tabela ROTINA
+CREATE TABLE ROTINA (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Rotina INT NOT NULL,
+    Nome VARCHAR(255) NOT NULL,
+    Descricao VARCHAR(255),
+    DataInicio DATE,
+    DataFim DATE,
+    FOREIGN KEY (Rotina) REFERENCES TEMPLATE_ROTINA(ID)
+);
+
+-- Índices para ROTINA
+CREATE INDEX idx_rotina_nome ON ROTINA(Nome);
+CREATE INDEX idx_rotina_data_inicio ON ROTINA(DataInicio);
+CREATE INDEX idx_rotina_data_fim ON ROTINA(DataFim);
+
+-- Tabela USUARIO
+CREATE TABLE USUARIO (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    Email VARCHAR(255),
+    CPF VARCHAR(14), -- Ajustado para 14 caracteres (apenas dígitos do CPF)
+    Celular VARCHAR(20),
+    Nivel_Acesso INT,
+    Ativo BIT DEFAULT 1
+);
+
+-- Índices para USUARIO
+CREATE INDEX idx_usuario_nome ON USUARIO(Nome);
+CREATE INDEX idx_usuario_email ON USUARIO(Email);
+CREATE INDEX idx_usuario_cpf ON USUARIO(CPF);
+
+-- Tabela LOGIN
+CREATE TABLE LOGIN (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Login VARCHAR(255) NOT NULL,
+    Senha VARCHAR(255) NOT NULL,
+    Usuario INT NOT NULL,
+    FOREIGN KEY (Usuario) REFERENCES USUARIO(ID) ON DELETE CASCADE
+);
+
+-- Índice para LOGIN
+CREATE INDEX idx_login_login ON LOGIN(Login);
+
+-- Tabela COMENTARIO
+CREATE TABLE COMENTARIO (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Rotina INT NOT NULL,
+    Usuario INT,
+    Texto VARCHAR(255) NOT NULL,
+    Pai INT,
+    DataComentario DATE,
+    FOREIGN KEY (Rotina) REFERENCES ROTINA(ID) ON DELETE CASCADE,
+    FOREIGN KEY (Usuario) REFERENCES USUARIO(ID) ON DELETE SET NULL,
+    FOREIGN KEY (Pai) REFERENCES COMENTARIO(ID)
+);
+
+-- Índice para COMENTARIO
+CREATE INDEX idx_comentario_data ON COMENTARIO(DataComentario);
+
+-- Tabela ACAO
+CREATE TABLE ACAO (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Descricao VARCHAR(255) NOT NULL
+);
+
+-- Tabela LOGS
+CREATE TABLE LOGS (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Tabela VARCHAR(255) NOT NULL,
+    IdItem INT NOT NULL,
+    DataLog DATE NOT NULL,
+    Acao INT NOT NULL,
+    ValorAnterior NVARCHAR(MAX), -- Substituído JSON por NVARCHAR(MAX)
+    ValorPosterior NVARCHAR(MAX), -- Substituído JSON por NVARCHAR(MAX)
+    Usuario INT NOT NULL,
+    FOREIGN KEY (Acao) REFERENCES ACAO(ID),
+    FOREIGN KEY (Usuario) REFERENCES USUARIO(ID)
+);
+
+-- Índice para LOGS
+CREATE INDEX idx_logs_tabela ON LOGS(Tabela);
+
+-- Tabela FUNCIONARIO
+CREATE TABLE FUNCIONARIO (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Usuario INT NOT NULL,
+    Empresa INT NOT NULL,
+    FOREIGN KEY (Usuario) REFERENCES USUARIO(ID),
+    FOREIGN KEY (Empresa) REFERENCES EMPRESA(ID)
+);
