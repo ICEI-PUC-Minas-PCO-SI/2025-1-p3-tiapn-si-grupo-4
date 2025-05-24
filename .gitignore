@@ -4,6 +4,9 @@ bin/
 .idea/
 .db/
 obj/
+tmp/
+.vs/
+*.sln
 
 
 .env

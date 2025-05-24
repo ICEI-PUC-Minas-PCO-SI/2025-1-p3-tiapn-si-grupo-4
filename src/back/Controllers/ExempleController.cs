@@ -61,7 +61,7 @@
 //         });
         
 //         rout.MapDelete("{id:int}", async (int id, SqlServerContext context) =>
-//         {
+//         { 
 //             try
 //             {
 //                 var exemple = await context.Exemple.FindAsync(id);

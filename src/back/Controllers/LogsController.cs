@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using back.Entities; // Se MyDbContext estiver neste namespace
+using back.Entities;
 
 namespace back.Controllers;
 

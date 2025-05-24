@@ -1,4 +1,10 @@
-import { AccessTime, AddCircleOutlineRounded, ArrowBackIosRounded, Person, PunchClock, TableBarRounded, ViewKanban, ViewKanbanOutlined } from '@mui/icons-material';
+import {
+    AccessTime,
+    AddCircleOutlineRounded,
+    ArrowBackIosRounded,
+    Person,
+    ViewKanbanOutlined
+} from '@mui/icons-material';
 import { useState } from "react";
 import { Pannels } from "../App";
 import { Link } from "react-router";
@@ -60,7 +66,7 @@ function SidePannelRow(
         <Link to={"/" + props.pannel} onClick={() => { props.setActivePannel(props.pannel) }} className={`flex flex-row items-center ${props.open ? `justify-start` : `justify-center`} m-5 p-3 ${props.open && props.active ? 'border border-[#235563]  rounded-lg bg-[#235563]' : ''}`}>
             <span className={`${!open && 'mx-auto'}`}>
                 < span color="#0A2C35" className="bg-[#F5F5F5] p-2 rounded-[100px] "  >
-                    <props.icon className="fontSizeLarge"/></span>
+                    <props.icon className="fontSizeLarge" /></span>
             </span>
             <span className={`text-white text-xl p-3 ${props.open ? 'block' : 'hidden'}`}>{props.text[0].toUpperCase() + props.text.substring(1)}</span>
         </Link>
