@@ -12,7 +12,7 @@ public class TarefaModel
   public int ID { get; init; }
 
   [Required]
-  [ForeignKey("TarefaID")]
+  [ForeignKey("idTarefa")]
   public TarefaModel Tarefa { get; set; }
 
   [Required]
