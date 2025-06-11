@@ -24,14 +24,9 @@ export function App() {
   return (
     <>
       <div className='h-screen overflow-hidden'>
-        {/* header */}
+        
         <Header />
-        {/* side pannel */}
         <div className='flex flex-row h-[calc(100vh-4rem)]'>
-          {/* main content */}
-
-          
-
           <BrowserRouter basename='/app' >
             <SidePannel activePannel={activePannel} setActivePannel={setActivePannel} />
             <main className='flex-1 bg-[#F5F5F5] '>
