@@ -17,6 +17,8 @@ public static class TarefaController
         route.MapPost("", CreateTarefa);
         route.MapPut("{id:int}", UpdateTarefa);
         route.MapDelete("{id:int}", DeleteTarefa);
+
+        route.MapGet("filtrar", FiltrarTarefas);
     }
 
     private static async Task<IResult> GetAllTarefas(MyDbContext context)
@@ -147,6 +149,44 @@ public static class TarefaController
         {
             Console.WriteLine($"Erro ao excluir tarefa: {e.Message}");
             return Results.Problem("Ocorreu um erro ao excluir a tarefa.", statusCode: StatusCodes.Status500InternalServerError);
+        }
+    }
+
+    private static async Task<IResult> FiltrarTarefas([AsParameters] TarefaFiltroDTO filtro, MyDbContext context)
+    {
+        try
+        {
+            var query = context.TarefaTemplates
+                .Include(t => t.Rotina)
+                    .ThenInclude(r => r.Empresa)
+                .AsQueryable();
+
+            if (filtro.EmpresaId is not null)
+            {
+                query = query.Where(t => t.Rotina.EmpresaId == filtro.EmpresaId);
+            }
+
+            if (filtro.RotinaId is not null)
+            {
+                query = query.Where(t => t.IdRotina == filtro.RotinaId);
+            }
+
+            var tarefas = await query.Select(t => new
+                {
+                    t.ID,
+                    t.Nome,
+                    Rotina  = t.Rotina.Nome,
+                    Empresa = t.Rotina.Empresa.Nome
+                })
+                .ToListAsync();
+
+            return Results.Ok(tarefas);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Erro ao filtrar tarefas: {e.Message}");
+            return Results.Problem("Ocorreu um erro ao filtrar as tarefas.",
+                                   statusCode: StatusCodes.Status500InternalServerError);
         }
     }
 }

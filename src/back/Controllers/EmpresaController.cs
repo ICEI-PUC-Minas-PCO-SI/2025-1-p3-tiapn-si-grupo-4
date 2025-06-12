@@ -9,7 +9,7 @@ public static class EmpresaController
 {
     public static void EmpresaRoutes(this WebApplication app)
     {
-        var route = app.MapGroup("empresa").RequireAuthorization("AuthenticatedUser");
+        var route = app.MapGroup("empresa");
 
         route.MapGet("", GetAllEmpresas);
         route.MapGet("{id:int}", GetEmpresaById);

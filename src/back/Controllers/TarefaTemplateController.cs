@@ -30,7 +30,7 @@ public static class TarefaTemplateController
                 {
                     ID = t.ID,
                     Nome = t.Nome,
-                    Rotina = t.Rotina != null ? new RotinaTemplateOnTarefaDTO { Id = t.Rotina.Id, Nome = t.Rotina.Nome, Descricao = t.Rotina.Descricao, EmpresaId = t.Rotina.IdEmpresa} : null,
+                    Rotina = t.Rotina != null ? new RotinaTemplateOnTarefaDTO { Id = t.Rotina.Id, Nome = t.Rotina.Nome, Descricao = t.Rotina.Descricao, EmpresaId = t.Rotina.EmpresaId} : null,
                     Pai = t.Pai,
                     Prioridade = t.Prioridade,
                     Ativo = t.Ativo

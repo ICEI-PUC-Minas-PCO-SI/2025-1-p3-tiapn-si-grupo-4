@@ -50,6 +50,11 @@ public partial class MyDbContext : DbContext
         modelBuilder.Entity<TarefaTemplateModel>().ToTable("TAREFA_TEMPLATES", "dbo"); 
         modelBuilder.Entity<TarefaModel>().ToTable("TAREFAS", "dbo");
 
+            modelBuilder.Entity<RotinaTemplateModel>()
+        .HasOne(r => r.Empresa)
+        .WithMany() // ou .WithMany(e => e.Rotinas) se tiver navegação reversa
+        .HasForeignKey(r => r.EmpresaId);
+
         base.OnModelCreating(modelBuilder);
     }
 }

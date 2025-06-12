@@ -7,7 +7,7 @@ export default [
         route("create", "./routes/home/create.tsx"),
         route("routines", "./routes/home/routines.tsx"),
         //route("historic", "routes/home/historic.tsx"),
-        // route("groups", "routes/home/groups.tsx")
+        route("groups", "./routes/home/groups.tsx")
     ]),
     route("*", "routes/not_found.tsx"),
 ] satisfies RouteConfig;

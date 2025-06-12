@@ -26,10 +26,7 @@ public class RotinaTemplateModel
     
     public string Nome { get; set; } = string.Empty;
     
-    public int IdEmpresa { get; set; }
-    
-    [Required]
-    [ForeignKey("IdEmpresa")]
+    public int EmpresaId { get; set; }
     public EmpresaModel Empresa { get; set; }
     
     public int Prioridade { get; set; }
