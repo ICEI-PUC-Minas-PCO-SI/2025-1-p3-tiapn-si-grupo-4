@@ -24,11 +24,11 @@ namespace back.Migrations
 
             modelBuilder.Entity("back.Models.EmpresaModel", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ID"));
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<bool>("Ativo")
                         .HasColumnType("tinyint(1)");
@@ -42,7 +42,7 @@ namespace back.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("varchar(255)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("EMPRESAS", "dbo");
                 });
@@ -86,12 +86,6 @@ namespace back.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<DateTime>("DataLogin")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime>("DataLogout")
-                        .HasColumnType("datetime(6)");
-
                     b.Property<string>("Login")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -101,10 +95,6 @@ namespace back.Migrations
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("varchar(255)");
-
-                    b.Property<string>("Token")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<int>("UsuarioID")
                         .HasColumnType("int");
@@ -131,7 +121,7 @@ namespace back.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("IdEmpresa")
+                    b.Property<int>("EmpresaId")
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
@@ -143,80 +133,11 @@ namespace back.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdEmpresa");
+                    b.HasIndex("EmpresaId");
 
                     b.HasIndex(new[] { "Nome" }, "idx_template_rotina_nome");
 
                     b.ToTable("TEMPLATE_ROTINAS", "dbo");
-                });
-
-            modelBuilder.Entity("back.Models.TarefaModel", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ID"));
-
-                    b.Property<DateTime?>("DataFim")
-                        .HasColumnType("date");
-
-                    b.Property<DateTime?>("DataInicio")
-                        .HasColumnType("date");
-
-                    b.Property<string>("Descricao")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<bool>("FoiExecutada")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<int>("TarefaID")
-                        .HasColumnType("int");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("TarefaID");
-
-                    b.ToTable("TAREFAS", "dbo");
-                });
-
-            modelBuilder.Entity("back.Models.TarefaTemplateModel", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ID"));
-
-                    b.Property<bool>("Ativo")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<int>("IdRotina")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<int?>("Pai")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Prioridade")
-                        .HasColumnType("int");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("IdRotina");
-
-                    b.ToTable("TAREFA_TEMPLATES", "dbo");
                 });
 
             modelBuilder.Entity("back.Models.UserModel", b =>
@@ -281,38 +202,11 @@ namespace back.Migrations
                 {
                     b.HasOne("back.Models.EmpresaModel", "Empresa")
                         .WithMany()
-                        .HasForeignKey("IdEmpresa")
+                        .HasForeignKey("EmpresaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Empresa");
-                });
-
-            modelBuilder.Entity("back.Models.TarefaModel", b =>
-                {
-                    b.HasOne("back.Models.TarefaModel", "Tarefa")
-                        .WithMany()
-                        .HasForeignKey("TarefaID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Tarefa");
-                });
-
-            modelBuilder.Entity("back.Models.TarefaTemplateModel", b =>
-                {
-                    b.HasOne("back.Models.RotinaTemplateModel", "Rotina")
-                        .WithMany("TarefasTemplates")
-                        .HasForeignKey("IdRotina")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Rotina");
-                });
-
-            modelBuilder.Entity("back.Models.RotinaTemplateModel", b =>
-                {
-                    b.Navigation("TarefasTemplates");
                 });
 #pragma warning restore 612, 618
         }

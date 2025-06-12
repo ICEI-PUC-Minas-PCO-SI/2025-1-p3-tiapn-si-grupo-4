@@ -3,34 +3,6 @@
 GET {{back_HostAddress}}/logs/
 Accept: application/json
 
-
-
-###  
-POST {{back_HostAddress}}/user
-Content-Type: application/json
-
-{
-    "nome": "teste",
-    "email": "teste@teste.com",
-    "cpf": "12345678901",
-    "celular": "12345678901",
-    "password": "123456"
-}
-
-### create user
-POST {{back_HostAddress}}/user
-Content-Type: application/json
-
-{
-    "nome": "string",
-    "email": "string", 
-    "cpf": "string",
-    "celular": "string",
-    "password": "string"
-}
-
-
-
 ###
 
 

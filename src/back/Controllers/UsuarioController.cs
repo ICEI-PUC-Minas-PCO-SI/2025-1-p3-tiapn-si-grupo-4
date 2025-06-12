@@ -10,8 +10,7 @@ public static class UsuarioController
 {
     public static void UsuarioRoutes(this WebApplication app)
     {
-        var route = app.MapGroup("user")
-        .RequireAuthorization("AuthenticatedUser");
+        var route = app.MapGroup("user");
 
         // GET all users
         route.MapGet("", async (MyDbContext context) =>
@@ -20,9 +19,6 @@ public static class UsuarioController
             {
                 var usuarios = await context.Users
                                     .Where(u => u.Ativo)
-                                    //join com a tabela funcionario e 
-                                    // empresa para trazer os dados
-                                    // refente somente aos da empresa que o usuario pertence
                                     .ToListAsync();
                 return Results.Ok(usuarios);
             }
@@ -93,7 +89,7 @@ public static class UsuarioController
                 {
                     Login = req.Email,
                     Senha = BCrypt.Net.BCrypt.HashPassword(req.Password),
-                    Usuario = userRef
+                    Usuario =  userRef
                 };
 
                 context.Login.Add(newLogin);
@@ -107,7 +103,7 @@ public static class UsuarioController
                 Console.WriteLine($"Erro ao criar usuário: {e.Message}");
                 return Results.Problem("Ocorreu um erro ao criar o usuário.", statusCode: StatusCodes.Status500InternalServerError);
             }
-        }).AllowAnonymous();
+        });
 
         // PUT - Update an existing user
         route.MapPut("{id:int}", async (int id, UsuarioDTO req, MyDbContext context) =>

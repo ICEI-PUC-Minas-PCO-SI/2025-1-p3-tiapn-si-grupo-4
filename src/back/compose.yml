@@ -43,9 +43,9 @@ services:
     container_name: app
     ports:
       - "3000:3000"
-    # depends_on:
-    #   migrations:
-    #     condition: service_completed_successfully 
+    depends_on:
+      migrations:
+        condition: service_completed_successfully 
     environment:
       - DATABASE_HOST=${DATABASE_HOST}
       - DATABASE_PORT=${DATABASE_PORT}

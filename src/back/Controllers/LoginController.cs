@@ -17,26 +17,30 @@ public static class AuthController
 {
     public static void AuthRoutes(this WebApplication app)
     {
-        var authGroup = app.MapGroup("/auth").AllowAnonymous();
+        var authGroup = app.MapGroup("/auth");
 
         authGroup.MapPost("/login", (
             LoginRequest request,
             AuthService authService,
-            IConfiguration configuration,
-            MyDbContext context
+            IConfiguration configuration
         ) =>
         {
             try
             {
-                var (usuario, error) = authService.Autenticar(request.Login, request.Senha);
+                var usuario = authService.Autenticar(request.Login, request.Senha);
 
                 if (usuario == null)
-                    return Results.Json(new { Error = error }, statusCode: StatusCodes.Status401Unauthorized);
+                    return Results.Unauthorized();
 
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var key = Encoding.ASCII.GetBytes(configuration["Jwt:Key"] ?? throw new InvalidOperationException("JWT Key not configured."));
 
-                var claims = authService.GerarClaims(usuario);
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.NameIdentifier, usuario.ID.ToString()),
+                    new Claim(ClaimTypes.Name, usuario.Nome),
+                    new Claim(ClaimTypes.Email, usuario.Email)               
+                };
 
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
@@ -49,15 +53,6 @@ public static class AuthController
 
                 var token = tokenHandler.CreateToken(tokenDescriptor);
                 var tokenString = tokenHandler.WriteToken(token);
-                
-
-                context.Login.Add(new LoginModel{
-                    Usuario = usuario,
-                    Token = tokenString,
-                    DataLogin = DateTime.Now,
-                    
-                });
-                context.SaveChanges();
 
                 return Results.Ok(new
                 {
@@ -70,8 +65,6 @@ public static class AuthController
                         usuario.NivelAcesso
                     }
                 });
-
-                
             }
             catch (InvalidOperationException ex)
             {
