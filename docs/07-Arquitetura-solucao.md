@@ -2,9 +2,30 @@
 
 <span style="color:red">Pré-requisitos: <a href="05-Projeto-interface.md"> Projeto de interface</a></span>
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
+A aplicação foi desenvolvida com base em uma arquitetura modular, composta por três principais camadas:
 
-![Arquitetura da Solução](images/arquitetura.png)
+#### 1. **Frontend** (`/src/front`)
+- Desenvolvido com **React** e **TypeScript**.
+- Utiliza **Tailwind CSS** para estilização.
+- Navegação controlada via **React Router**.
+- Gerenciamento de pacotes com `npm` (`package.json`, `package-lock.json`).
+- Arquivos de configuração e build com suporte a **Docker** (`Dockerfile`).
+- Preparado para ser servido como **SPA (Single Page Application)**.
+
+#### 2. **Backend** (`/src/back`)
+- Desenvolvido com **ASP.NET Core (.NET 7)**.
+- Utiliza o **Entity Framework Core** para acesso ao banco de dados.
+- Arquitetura orientada a serviços com configurações via `Program.cs` e `appsettings.json`.
+- Inclui suporte a **migrações de banco** via `MigrationManager.cs`.
+- Contêinerizado com **Docker** e pronto para orquestração com `docker-compose`.
+
+#### 3. **Banco de Dados**
+- Banco relacional (ex: **PostgreSQL** ou **SQL Server**).
+- Configurado por meio do Entity Framework Core.
+- Suporte a versionamento de schema via migrações.
+- Hospedado na Render ou em serviço externo compatível.
+
+![Arquitetura da Solução](images/Arquitetura.png)
 
 ## Diagrama de classes
 
@@ -174,9 +195,19 @@ Esse script deverá ser incluído em um arquivo .sql na pasta [de scripts SQL](.
 
 ## Tecnologias
 
-Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+A solução foi desenvolvida utilizando um conjunto moderno de tecnologias que visam garantir desempenho, manutenibilidade e escalabilidade. O frontend foi implementado em **React** com **TypeScript**, proporcionando uma aplicação web dinâmica e fortemente tipada. A estilização da interface foi feita com **Tailwind CSS**, que permite construir rapidamente componentes responsivos com um conjunto de classes utilitárias.
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+No backend, a aplicação utiliza **ASP.NET Core**, um framework robusto e multiplataforma baseado em **C#**, responsável por fornecer uma API REST que interage com o banco de dados. Para o mapeamento objeto-relacional, foi adotado o **Entity Framework Core**, que facilita as operações sobre dados relacionais utilizando modelos da aplicação.
+
+A infraestrutura da aplicação conta com a utilização de **Docker**, permitindo o empacotamento padronizado dos serviços e facilitando a implantação em ambientes homogêneos. O **Docker Compose** também é utilizado para orquestrar a execução local dos serviços, como o backend e o banco de dados. O projeto é versionado com **GitHub**, que também serve como base para o deploy contínuo via integração com o serviço de hospedagem **Render**. Esse ambiente hospeda tanto o frontend (como site estático) quanto o backend (como serviço web dinâmico), ambos configurados a partir de contêineres Docker. O banco de dados relacional utilizado é o **PostgreSQL**, conectado diretamente à API.
+
+As principais ferramentas de desenvolvimento incluem o **Visual Studio Code** como IDE principal, o **.NET CLI** para gerenciamento e execução do backend, além do **npm** para controle de pacotes do frontend.
+
+## Fluxo de Interação do Usuário com o Sistema
+
+O fluxo de interação do sistema inicia com o usuário acessando o site por meio do navegador, carregando o frontend hospedado na plataforma Render. A interface, construída em React, emite requisições HTTP (via `fetch` ou bibliotecas similares) para a API desenvolvida em ASP.NET Core. A API processa essas requisições, realizando validações, regras de negócio e, quando necessário, consultas ou alterações no banco de dados relacional PostgreSQL utilizando o Entity Framework Core. As respostas da API, geralmente no formato JSON, retornam ao frontend, que então atualiza dinamicamente a interface do usuário com base nas informações recebidas.
+
+![Tecnologias e sua condução na aplicação](images/Tecnologia.png)
 
 
 | **Dimensão**   | **Tecnologia**  |
@@ -184,28 +215,28 @@ Apresente também uma figura explicando como as tecnologias estão relacionadas 
 | Front-end      | HTML + CSS + JS + React |
 | Back-end       | Node.js         |
 | SGBD           | MySQL           |
-| Deploy         | Vercel          |
+| Deploy         | Render          |
 
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foram realizados.
+A aplicação foi preparada para deployment utilizando contêineres Docker, com um `Dockerfile` localizado na raiz do backend. Esse arquivo define a imagem base da aplicação .NET, instala dependências necessárias, copia os arquivos do projeto e define o comando de inicialização. Foram criados arquivos de configuração como `appsettings.json` e `appsettings.Development.json`, que permitem separar variáveis sensíveis e adaptar comportamentos da aplicação conforme o ambiente (desenvolvimento ou produção).
 
-> **Links úteis**:
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando seu site no Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+A hospedagem foi realizada na plataforma Render. Uma conta foi criada e um serviço do tipo “Web Service” foi configurado. O projeto foi conectado diretamente ao Render por meio do GitHub. No momento da configuração, foi especificado que o método de build seria baseado no `Dockerfile`, permitindo ao Render construir a imagem automaticamente. Variáveis de ambiente essenciais, como a string de conexão com o banco de dados e chaves secretas, foram adicionadas na seção “Environment” da interface de gerenciamento da plataforma.
+
+Durante o processo de deploy, o Render realiza o build da imagem Docker com base no repositório conectado. Após o build, o container é executado e a aplicação é exposta na porta definida pelo projeto, sendo disponibilizada por uma URL pública fornecida automaticamente pela plataforma.
+
+O banco de dados foi provisionado separadamente — podendo estar dentro do Render ou em um serviço externo compatível com o Entity Framework Core. As credenciais de acesso ao banco foram configuradas como variáveis de ambiente, garantindo a segurança e isolamento entre os ambientes. A separação entre configurações de produção e desenvolvimento foi mantida por meio dos arquivos de configuração e do suporte do Render à definição de variáveis específicas por ambiente.
+
 
 ## Qualidade de software
 
-Conceituar qualidade é uma tarefa complexa, mas ela pode ser vista como um método gerencial que, por meio de procedimentos disseminados por toda a organização, busca garantir um produto final que satisfaça às expectativas dos stakeholders.
+A qualidade do software foi avaliada com base na norma ISO/IEC 25010, que define atributos essenciais para garantir que o sistema atenda às necessidades dos usuários e mantenedores. A equipe considerou aspectos como usabilidade, desempenho, manutenibilidade, segurança e portabilidade.
 
-No contexto do desenvolvimento de software, qualidade pode ser entendida como um conjunto de características a serem atendidas, de modo que o produto de software atenda às necessidades de seus usuários. Entretanto, esse nível de satisfação nem sempre é alcançado de forma espontânea, devendo ser continuamente construído. Assim, a qualidade do produto depende fortemente do seu respectivo processo de desenvolvimento.
+A usabilidade é priorizada devido à interface acessível via navegador, o sistema foi feito para que os usúarios tem a a fácil compreensão e utilização, especialmente em tarefas como login e cadastro. No que diz respeito ao desempenho e à eficiência, o sistema prioriza garantir respostas rápidas e uso adequado de recursos, visto que o frontend e o backend estão hospedados na Render. 
 
-A norma internacional ISO/IEC 25010, que é uma atualização da ISO/IEC 9126, define oito características e 30 subcaracterísticas de qualidade para produtos de software. Com base nessas características e nas respectivas subcaracterísticas, identifique as subcaracterísticas que sua equipe utilizará como base para nortear o desenvolvimento do projeto de software, considerando alguns aspectos simples de qualidade. Justifique as subcaracterísticas escolhidas pelo time e elenque as métricas que permitirão à equipe avaliar os objetos de interesse.
+A manutenibilidade é favorecida por uma arquitetura modular e organizada, com uso de Docker e separação entre camadas. Quanto à segurança, a proteção de dados sensíveis e o controle de acesso são fundamentais, considerando os processos de autenticação do sistema. Forão usados ferramentas como o OWASP ZAP e avaliado o número de falhas de autenticação.
 
-> **Links úteis**:
-> - [ISO/IEC 25010:2011 - Systems and Software Engineering — Systems and Software Quality Requirements and Evaluation (SQuaRE) — System and Software Quality Models](https://www.iso.org/standard/35733.html/)
-> - [Análise sobre a ISO 9126 – NBR 13596](https://www.tiespecialistas.com.br/analise-sobre-iso-9126-nbr-13596/)
-> - [Qualidade de software - Engenharia de Software](https://www.devmedia.com.br/qualidade-de-software-engenharia-de-software-29/18209)
+Por fim, a portabilidade é assegurada pelo uso de contêineres e plataformas em nuvem, o que facilita a execução do sistema em diferentes ambientes. Forão consideradas a duração dos processos de build e deploy e a compatibilidade entre os ambientes locais e remotos.
+
+Essa abordagem visa garantir que o software mantenha altos padrões de qualidade em seus aspectos funcionais e não funcionais, alinhando-se às boas práticas propostas pela norma ISO/IEC 25010.
