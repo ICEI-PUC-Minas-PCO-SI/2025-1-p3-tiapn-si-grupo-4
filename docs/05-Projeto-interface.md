@@ -89,8 +89,14 @@ No canto superior direito, há um botão de ação destacado: “Iniciar Rotina�
 > ![Tela Rotinas](images/ROTINAS.png)
 
 
-## Telas do processo 4 - Histórico
+## Telas do processo 4 - Grupos
 
-A tela de Histórico é dedicada à consulta de rotinas já executadas, funcionando como um repositório organizado das atividades concluídas na plataforma. Ela é especialmente útil para auditorias, controle de execução e análises gerenciais, oferecendo uma visão retrospectiva das operações realizadas pelos usuários.
-A interface foi pensada para permitir uma navegação eficiente, com integração esperada de filtros por data, usuário e categoria, facilitando a localização de informações específicas conforme a necessidade de quem consulta. Essa tela reforça o compromisso do Routix com a transparência, rastreabilidade e controle das rotinas operacionais.
-> ![Tela Histórico](images/HISTÓRICO.png)
+### Tela de Grupos
+
+A tela de Grupos permite a visualização organizada dos usuários agrupados por cargo, facilitando a gestão e o controle de equipes dentro do sistema. Cada membro é apresentado em cards individuais, que exibem informações essenciais como nome, função e CPF. Há um botão “+” que possibilita a inclusão rápida de novos membros, além de um campo de pesquisa e filtros por cargo, que ajudam a localizar usuários de forma ágil. A interface também conta com o botão “+ Criar Grupo”, permitindo ao gestor formar novas equipes e estruturar melhor a distribuição de tarefas.
+> ![Tela Grupo](images/GROUPS.png)
+
+
+### Tela de cadastro de funcionários
+A tela de cadastro de funcionários permite registrar informações básicas como nome completo, CPF e empresa vinculada. Essa etapa é fundamental para identificar e associar corretamente cada colaborador ao seu local de atuação.
+>> ![Tela Grupo](images/Funcionario.jpeg)

@@ -216,4 +216,4 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 | Documentos do projeto               | GitHub                             | [http://2025-1-p3-tiapn-si-grupo-4/docs](https://github.com/ICEI-PUC-Minas-PCO-SI/2025-1-p3-tiapn-si-grupo-4/tree/main/docs)|
 | Projeto de interface                | Figma                              | [http://Routix](https://www.figma.com/design/sbwNsvIbSnB5KKWx21rz6X/ROUTIX-Web?node-id=0-1&p=f&t=ImtvVMEpjvRD3)  |
 | Gerenciamento do projeto            | GitHub Projects                    | [http://github.projects/Kanban](https://github.com/orgs/ICEI-PUC-Minas-PCO-SI/projects/81/views/1)   |
-| Hospedagem                          | Vercel                             | http://....                            |
+| Hospedagem                          | Render                             | [https://two025-1-p3-tiapn-si-grupo-4.onrender.com](https://two025-1-p3-tiapn-si-grupo-4.onrender.com)                         |

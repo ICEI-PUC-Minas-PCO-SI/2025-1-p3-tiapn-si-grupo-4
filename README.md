@@ -20,14 +20,23 @@ Uma plataforma de gerenciamento operacional voltada para empresas que buscam pad
 * Amália Soares Vieira de Vasconcelos
 
 ## Instruções de utilização
+Link do site: 
+[https://two025-1-p3-tiapn-si-grupo-4.onrender.com](https://two025-1-p3-tiapn-si-grupo-4.onrender.com)   
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+Caso não funcione:
 
-Não deixe de informar o link onde a aplicação estará disponível para acesso (por exemplo: https://adota-pet.herokuapp.com/src/index.html).
-
-Se houver usuário de teste, o login e a senha também deverão ser informados aqui (por exemplo: usuário - admin / senha - admin).
-
-O link e o usuário/senha descritos acima são apenas exemplos de como tais informações deverão ser apresentadas.
+É necessário ter o node.js, docker e o .NET 8 instalados. Após as tecnologias baixados, abra 2 terminais e direcione para pasta ./src/back e outro para .src/front. No terminal com o back rode os comandos: 
+```
+dotnet up db -d
+dotnet run
+```
+Logo após no terminal com o front:
+```
+npm install
+npm run dev
+```
+Após isso o site estará navegável
+     
 # Documentação
 
 <ol>
