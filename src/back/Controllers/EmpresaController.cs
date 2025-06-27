@@ -53,7 +53,6 @@ public static class EmpresaController
     {
         try
         {
-
             var newEmpresa = new EmpresaModel
             {
                 Ativo = true,

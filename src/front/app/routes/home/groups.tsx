@@ -11,12 +11,12 @@ import EditFuncionario, { type EditFuncionarioData } from "~/components/EditFunc
 
 interface GroupMember {
   nome: string;
-  identificador: string; // CPF
+  identificador: string;
 }
 
 interface MemberCategory {
   id: number;
-  title: string; // nome da empresa
+  title: string;
   members: GroupMember[];
 }
 
@@ -39,39 +39,45 @@ export default function GroupsPage() {
   const [editFuncionarioIndex, setEditFuncionarioIndex] = useState<number | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
+  const [loading, setLoading] = useState<boolean>(false);
+
   const baseUrl = import.meta.env.VITE_BASE_URL;
 
-  // Função para buscar funcionários de uma empresa pelo id
   const fetchFuncionariosPorEmpresa = async (empresaId: number): Promise<GroupMember[]> => {
     try {
+      setLoading(true);
       const res = await fetch(`${baseUrl}/empresa/${empresaId}/funcionarios`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
       });
       if (!res.ok) {
         console.error(`Erro ao buscar funcionários da empresa ${empresaId}`, await res.text());
+        setLoading(false);
         return [];
       }
       const funcionarios = await res.json();
-      // Mapear para GroupMember
+
+      setLoading(false);
       return funcionarios.map((f: any) => ({
         nome: f.nome,
-        ocupacao: "", // Sem cargo atualmente
+        ocupacao: "",
         identificador: f.cpf,
       }));
     } catch (error) {
+      setLoading(false);
       console.error("Erro na requisição de funcionários:", error);
       return [];
     }
   };
 
-  // Busca empresas e para cada empresa busca seus funcionários
   const fetchEmpresas = async () => {
     try {
+      setLoading(true);
       const res = await fetch(`${baseUrl}/empresa`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
       });
       if (!res.ok) {
         console.error("Erro ao buscar empresas:", await res.text());
+        setLoading(false);
         return;
       }
       const data = await res.json();
@@ -89,7 +95,9 @@ export default function GroupsPage() {
       );
 
       setMemberCategories(empresasComFuncionarios);
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
       console.error("Erro de rede ao buscar empresas:", error);
     }
   };
@@ -104,8 +112,8 @@ export default function GroupsPage() {
     const empresa = memberCategories[selectedCategoryIndex];
     const empresaId = empresa?.id;
     if (!empresaId) return;
-
     try {
+      setLoading(true);  
       // Busca todos usuários para encontrar o id pelo cpf
       const resUsers = await fetch(`${baseUrl}/user`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
@@ -117,6 +125,7 @@ export default function GroupsPage() {
       const usuario = users.find((u: any) => u.cpf === novoFuncionario.cpf);
       if (!usuario) {
         alert("Usuário com este CPF não encontrado.");
+        setLoading(false);
         return;
       }
 
@@ -149,7 +158,9 @@ export default function GroupsPage() {
         console.error("Erro ao cadastrar funcionário:", errorText);
         alert("Erro ao cadastrar funcionário: " + errorText);
       }
+      setLoading(false)
     } catch (error) {
+      setLoading(false)
       console.error("Erro na criação de funcionário:", error);
       alert("Erro inesperado na criação do funcionário.");
     }

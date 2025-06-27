@@ -171,28 +171,27 @@ public static class UsuarioController
         });
 
         route.MapGet("{id:int}/empresa", async (int id, MyDbContext context) =>
-{
-    try
-    {
-        var funcionario = await context.Funcionarios
-            .Where(f => f.UsuarioId == id)
-            .Select(f => new
             {
-                f.EmpresaId
-            })
-            .FirstOrDefaultAsync();
+                try{
+                var funcionario = await context.Funcionarios
+                    .Where(f => f.UsuarioId == id)
+                    .Select(f => new
+                    {
+                        f.EmpresaId
+                    })
+                    .FirstOrDefaultAsync();
 
-        if (funcionario == null)
-            return Results.NotFound("Usuário não associado a nenhuma empresa");
+                if (funcionario == null)
+                    return Results.NotFound("Usuário não associado a nenhuma empresa");
 
-        return Results.Ok(funcionario);
-    }
-    catch (Exception e)
-    {
-        Console.WriteLine($"Erro ao buscar empresa do usuário {id}: {e.Message}");
-        return Results.Problem($"Erro ao buscar a empresa do usuário com ID {id}.");
-    }
-});
+                return Results.Ok(funcionario);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Erro ao buscar empresa do usuário {id}: {e.Message}");
+                    return Results.Problem($"Erro ao buscar a empresa do usuário com ID {id}.");
+                }
+            });
 
     }
 }

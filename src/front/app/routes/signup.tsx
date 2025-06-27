@@ -3,6 +3,7 @@ import { Form, redirect, useActionData, useLocation, useNavigate } from 'react-r
 import type { ActionFunctionArgs } from 'react-router-dom';
 import ErrorMessage from '~/components/ErrorMessage';
 import Header from '~/components/header';
+import Loading from '~/components/Loading';
 import { loginUser, signupUser } from '~/services/auth';
 
 interface CompleteSignUpActionData {
@@ -82,8 +83,9 @@ const CompleteSignUpFormComponent = () => {
     const navigate = useNavigate();
     const [errorKey, setErrorKey] = useState(0);
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
 
-    useEffect(()=>{
+    useEffect(() => {
         setName(stateName)
         setPassword("")
         setCpf("")
@@ -123,22 +125,24 @@ const CompleteSignUpFormComponent = () => {
 
 
         try {
+            setLoading(true);
             const result = await signupUser({
                 nome: name,
                 email: email,
                 cpf: cpf,
                 celular: '',
                 password: password,
-                
-
             });
+            setLoading(false);
             if (!result.token) {
                 setError('Falha no login. Tente novamente.');
                 setErrorKey(prevKey => prevKey + 1);
                 return;
             }
             navigate('/create');
+            setLoading(false);
         } catch (err: any) {
+            setLoading(false);
             const errorMessage = err.response?.data?.message || 'Falha no login. Tente novamente.';
             setError(errorMessage);
             setErrorKey(prevKey => prevKey + 1);
@@ -239,14 +243,19 @@ const CompleteSignUpFormComponent = () => {
                             )}
                         </div>
 
-                        <div>
-                            <button
-                                type="submit"
-                                className="w-full  flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#0A2C35] hover:bg-[#00161C] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00161C] transition-colors duration-300"
-                            >
-                                FINALIZAR
-                            </button>
-                        </div>
+                        {loading ? (
+                            <Loading />
+                        ) : <div>
+                                <button
+                                    type="submit"
+                                    className="w-full  flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#0A2C35] hover:bg-[#00161C] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00161C] transition-colors duration-300"
+                                >
+                                    FINALIZAR
+                                </button>
+                            </div>
+                        }
+
+
 
                         <ErrorMessage message={error} key={errorKey}>
                         </ErrorMessage>

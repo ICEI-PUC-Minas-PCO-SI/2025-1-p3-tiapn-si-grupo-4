@@ -1,6 +1,6 @@
 import { useState, type Key } from "react"
 
-const ErrorMessage = (props: { message: string | null, key: Key }) => {
+const ErrorMessage = (props: { message: string | null, key?: Key }) => {
 
     const [bounce, setBounce] = useState(true)
 

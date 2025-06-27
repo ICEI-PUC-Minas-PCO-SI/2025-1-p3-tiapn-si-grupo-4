@@ -6,15 +6,15 @@ import Bg4 from "@assets/bg-04.png";
 import Login from "../components/LoginComponent";
 import Signup from "../components/SignUpComponent";
 import { useNavigate } from "react-router-dom";
-
+import Loading from "~/components/Loading";
 
 export default function () {
     const [isLogon, setLogon] = useState(false);
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     const toggleLogon = (e: Event) => {
         e.preventDefault();
-
         setLogon(prev => !prev);
     }
 
@@ -24,7 +24,6 @@ export default function () {
             navigate('/create');
         }
     }, [navigate]);
-
 
     return (
         <main className="flex w-full flex-row h-screen overflow-hidden relative bg-[#D9D9D9]">
@@ -57,7 +56,13 @@ export default function () {
             <div className="flex w-full h-full relative z-50">
                 <div className={`flex w-1/2 h-full bg-gray-200 transition-all duration-700 ease-in-out ${isLogon ? 'translate-x-full' : 'translate-x-0'
                     }`}>
-                    {!isLogon ? <Login toggle={toggleLogon} /> : <Signup toggle={() => toggleLogon(new MouseEvent('click'))} />}
+                    {loading ? (
+                        <Loading/>
+                    ) : (
+                        !isLogon
+                            ? <Login toggle={toggleLogon} setLoading={setLoading} />
+                            : <Signup toggle={() => toggleLogon(new MouseEvent('click'))} />
+                    )}
                 </div>
             </div>
         </main>

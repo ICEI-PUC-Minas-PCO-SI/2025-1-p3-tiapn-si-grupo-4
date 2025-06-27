@@ -2,6 +2,8 @@ import { useEffect, useRef, useState, type PropsWithChildren } from "react";
 import CloseIcon from '@mui/icons-material/Close';
 import DefaultButton from "./DefaultButton";
 import apiClient from "~/services/client";
+import Loading from "./Loading";
+import ErrorMessage from "./ErrorMessage";
 
 export interface NovaRotina {
     nome: string;
@@ -22,12 +24,16 @@ function CreateRoutine(props: ModalProps) {
     const [nome, setNome] = useState('');
     const [descricao, setDescRotina] = useState('');
     const [prioridade, setPrioridade] = useState('1');
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("")
 
     const baseUrl = import.meta.env.VITE_BASE_URL;
 
     const handleSubmit = async () => {
         if (!props) return null;
         if (nome.trim() === "") return;
+
+        setLoading(true);
 
         const empresaIdRaw = localStorage.getItem("empresaId");
         const idEmpresa = empresaIdRaw ? Number(empresaIdRaw) : 0;
@@ -40,14 +46,14 @@ function CreateRoutine(props: ModalProps) {
 
         try {
             const response = await apiClient.post(`/RotinaTemplate`, {
-                    nome: novaRotina.nome,
-                    prioridade: Number(novaRotina.prioridade) || 0,
-                    descricao: novaRotina.descricao || '',
-                    idEmpresa: idEmpresa,
-                    ativo: true,
+                nome: novaRotina.nome,
+                prioridade: Number(novaRotina.prioridade) || 0,
+                descricao: novaRotina.descricao || '',
+                idEmpresa: idEmpresa,
+                ativo: true,
             });
 
-            if (response.status != 200 ) {
+            if (response.status != 200) {
                 const errorText = await response.statusText;
                 console.error("Erro ao criar rotina:", errorText);
                 return;
@@ -57,7 +63,10 @@ function CreateRoutine(props: ModalProps) {
             setPrioridade('1');
             setDescRotina('');
             props.closeModal();
+            setLoading(false)
         } catch (error) {
+            setLoading(false);
+            setError("Erro Ao Cadastrar Rotina");
             console.error("Erro na requisição:", error);
         }
     };
@@ -163,11 +172,16 @@ function CreateRoutine(props: ModalProps) {
                     </div>
                 </div>
 
-                <div className="flex w-full p-4 justify-center gap-2">
-                    <DefaultButton onClick={handleSubmit}>
-                        CRIAR
-                    </DefaultButton>
-                </div>
+                {
+                    loading ? <Loading /> : (<div className="flex w-full p-4 justify-center gap-2">
+                        <DefaultButton onClick={handleSubmit}>
+                            CRIAR
+                        </DefaultButton>
+                    </div>)
+                }
+                {
+                    error == "" ? <></> : <ErrorMessage message={error} ></ErrorMessage>
+                }
 
             </div>
 

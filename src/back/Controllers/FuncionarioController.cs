@@ -16,7 +16,7 @@
 //             {
 //                 try
 //                 {
-//                     var funcionarios = await context.Funcionario.ToListAsync();
+//                     var funcionarios = await context.Funcionarios.ToListAsync();
 //                     return Results.Ok(funcionarios);
 //                 }
 //                 catch (Exception e)
@@ -27,7 +27,7 @@
 //             });
 
 //             route.MapPost("",
-//                 async (FuncionarioDTO req, SqlServerContext context) =>
+//                 async (FuncionarioDTO req, MyDbContext context) =>
 //                 {
 //                     try
 //                     {

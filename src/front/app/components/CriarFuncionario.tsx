@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type PropsWithChildren } from "react";
 import DefaultButton from "./DefaultButton";
+import Loading from "./Loading";
 
 export interface NovoFuncionario {
   nome: string;
@@ -14,6 +15,7 @@ interface ModalProps extends PropsWithChildren {
   actions?: React.ReactElement[];
   result: NovoFuncionario | undefined;
   empresas?: string[];
+  loading?: boolean;
 }
 
 function CriarFuncionario(props: ModalProps) {
@@ -119,11 +121,13 @@ function CriarFuncionario(props: ModalProps) {
           </div>
         </div>
 
-        <div className="flex w-full p-4 justify-center gap-2">
+        {props.loading ?
+           <Loading/> :
+        ( <div className="flex w-full p-4 justify-center gap-2">
           <DefaultButton onClick={handleSubmit}>
             CRIAR
           </DefaultButton>
-        </div>
+        </div> )}
       </div>
     </dialog>
   );
