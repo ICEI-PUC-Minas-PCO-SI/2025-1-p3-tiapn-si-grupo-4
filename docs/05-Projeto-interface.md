@@ -21,20 +21,12 @@ A imagem ilustra um fluxograma de navegação funcional do sistema Routix, demon
 
 ## Wireframes
 
-São protótipos usados no design de interface para sugerir a estrutura de um site web e seu relacionamento entre suas páginas. Um wireframe web é uma ilustração que mostra o layout dos elementos fundamentais na interface.
+Embora os wireframes sejam comumente utilizados no design de interfaces para definir a estrutura inicial de um site e o relacionamento entre suas páginas, no desenvolvimento do Routix optamos por partir diretamente para os protótipos de telas finais. Essa decisão foi tomada para agilizar o processo de construção visual do sistema, focando desde o início na representação real das interfaces, com elementos completos de layout e usabilidade, evitando etapas intermediárias de esboço.
 
-![Exemplo de wireframe](images/wireframe.png)
+![Exemplo de wireframe](images/login.PNG)
+![Exemplo de wireframe](images/criar.PNG)
+![Exemplo de wireframe](images/Rotinas.PNG)
  
-> **Links úteis**:
-> - [Protótipos: baixa, média ou alta fidelidade?](https://medium.com/ladies-that-ux-br/prot%C3%B3tipos-baixa-m%C3%A9dia-ou-alta-fidelidade-71d897559135)
-> - [Protótipos vs wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
-
 
 ## Interface do sistema
 

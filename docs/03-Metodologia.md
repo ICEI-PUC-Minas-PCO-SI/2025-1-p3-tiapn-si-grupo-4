@@ -112,6 +112,60 @@ Atualizado em: 08/05/2025
 | João        | Telas dos processos              | 22/04/2025  | 08/05/2025 | ✔️     | 08/05/2025   |
 | Felipe      | Metodologia do GitHub            | 22/04/2025  | 08/05/2025 | ✔️     | 08/05/2025   |
 
+#### Sprint 4
+
+Atualizado em: 05/06/2025
+
+| Responsável | Tarefa/Requisito | Iniciado em | Prazo | Status | Terminado em |
+|---|---|---|---|---|---|
+| João | Front de Login e Cadastro | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| João | Back de Login e Cadastro | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| Felipe | Relatório | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| Yuri | Back de Rotina | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| Yuri | Integração Back e Front | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| Bernardo | Back de Empresa | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| Bernardo | Front da Home | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| Felipe | Back de Tarefa | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| Felipe | Componentes de botões | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| Felipe | Tela de grupos | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| Rafael | Back de Insumo | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| Rafael | Integração Back e Front | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| Rafael | Tela de rotinas | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| Ivo | Apresentação de slides | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| Ivo | Alguns modais do Front | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| Felipe | Organização do Kanban | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| João | Telas dos processos | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+| Felipe | Metodologia do GitHub | 12/05/2025 | 06/06/2025 | ✔️ | 06/06/2025 |
+
+#### Sprint 5
+
+Atualizado em: 27/06/2025
+
+| Responsável | Tarefa/Requisito | Iniciado em | Prazo | Status | Terminado em |
+|---|---|---|---|---|---|
+| João | Ajustes no Front de Login e Cadastro | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| João | Ajustes no Back de Login e Cadastro | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Felipe | Ajustes no Relatório | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Yuri | Ajustes no Back de Rotina | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Yuri | Ajustes na Integração Back e Front | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Bernardo | Ajustes no Back de Empresa | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Bernardo | Ajustes no Front da Home | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Felipe | Ajustes no Back de Tarefa | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Felipe | Ajustes nos Componentes de botões | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Felipe | Ajustes na Tela de grupos | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Rafael | Ajustes no Back de Insumo | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Rafael | Ajustes na Integração Back e Front | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Rafael | Ajustes na Tela de rotinas | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Ivo | Ajustes na Apresentação de slides | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Ivo | Ajustes em Alguns modais do Front | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Felipe | Organização do Kanban | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| João | Organização do Kanban | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| João | Ajustes nas Telas dos processos | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Felipe |Metodologia do GitHub | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Felipe |Arquitetura da solução do GitHub | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Felipe | Relatório de Extensão | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+| Ivo | Relatório de Extensão | 08/06/2025 | 27/06/2025 | ✔️ | 27/06/2025 |
+
 Legenda:
 - ✔️: terminado
 - 📝: em execução
