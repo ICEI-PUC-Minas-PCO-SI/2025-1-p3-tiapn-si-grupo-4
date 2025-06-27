@@ -16,7 +16,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Verificar se o usuário consegue realizar seu cadastro na plataforma. |
 | Passos | - Acessar o sistema pela URL definida <br> - Clicar em “Cadastrar” ou “Criar Conta” <br> - Preencher os campos obrigatórios (nome, CPF, RG, data de nascimento, e-mail, senha etc.) <br> - Confirmar o cadastro |
 | Critério de êxito | - O cadastro é finalizado com sucesso e o sistema redireciona o usuário para a tela de login ou dashboard. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste | Bernardo Garcia |
 
 <br>
 
@@ -26,7 +26,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Verificar se o usuário consegue efetuar login após se cadastrar. |
 | Passos | - Acessar a tela de login <br> - Preencher os campos de CPF ou e-mail e senha <br> - Clicar em “Entrar” |
 | Critério de êxito | - O sistema autentica o usuário e redireciona para o painel da plataforma. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste |  Bernardo Garcia |
 
 <br>
 
@@ -36,7 +36,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Verificar se é possível criar uma nova rotina ou processo no sistema. |
 | Passos | - Acessar a dashboard <br> - Selecionar a opção “Nova rotina” ou “Novo processo” <br> - Preencher os campos obrigatórios (nome, descrição etc.) <br> - Confirmar o cadastro |
 | Critério de êxito | - A rotina ou processo é exibido na lista de rotinas/processos do usuário. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste |Bernardo Garcia|
 
 <br>
 
@@ -46,7 +46,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Verificar se o usuário consegue gerenciar tarefas em sua rotina. |
 | Passos | - Acessar rotina <br> - Adicionar, editar ou remover tarefa <br> - Salvar |
 | Critério de êxito | - Tarefa adicionada, editada ou removida corretamente. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste |Bernardo Garcia|
 
 <br>
 
@@ -56,7 +56,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Verificar se sub-rotinas podem ser gerenciadas dentro de uma rotina. |
 | Passos | - Acessar rotina <br> - Clicar em “Adicionar sub-rotina” <br> - Preencher dados e salvar |
 | Critério de êxito | - Sub-rotina visível e associada corretamente à rotina principal. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste |Bernardo Garcia|
 
 <br>
 
@@ -66,7 +66,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Validar se o usuário consegue iniciar uma rotina existente. |
 | Passos | - Acessar lista de rotinas <br> - Clicar em “Iniciar” na rotina desejada |
 | Critério de êxito | - Status da rotina altera para “Em andamento”. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste |Bernardo Garcia|
 
 <br>
 
@@ -76,7 +76,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Verificar se é possível editar dados de uma rotina em execução. |
 | Passos | - Acessar rotina em andamento <br> - Clicar em “Editar” <br> - Alterar campos <br> - Salvar alterações |
 | Critério de êxito | - Alterações são refletidas corretamente. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste |Bernardo Garcia|
 
 <br>
 
@@ -86,7 +86,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Verificar se é possível comentar em tarefas ou sub-processos. |
 | Passos | - Acessar tarefa ou sub-rotina <br> - Digitar comentário <br> - Enviar |
 | Critério de êxito | - Comentário salvo e exibido corretamente. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste |Bernardo Garcia|
 
 <br>
 
@@ -96,7 +96,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Confirmar se o sistema exibe corretamente as alterações realizadas em rotinas ativas. |
 | Passos | - Acessar rotina ativa <br> - Abrir aba ou botão de histórico |
 | Critério de êxito | - Histórico mostra modificações com data, hora e responsável. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste |Bernardo Garcia|
 
 <br>
 
@@ -106,7 +106,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Verificar se o histórico permanece disponível após a finalização. |
 | Passos | - Acessar rotina finalizada <br> - Clicar em “Histórico” |
 | Critério de êxito | - Histórico exibido de forma íntegra. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste |Bernardo Garcia|
 
 
 <br>
@@ -117,7 +117,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Verificar se o usuário consegue adicionar, editar ou remover uma tarefa enquanto a rotina está em execução. |
 | Passos | - Acessar rotina em andamento <br> - Adicionar ou editar uma tarefa <br> - Salvar alterações |
 | Critério de êxito | - A tarefa é atualizada ou inserida corretamente na interface e no banco de dados. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste |Bernardo Garcia|
 
 <br>
 
@@ -127,7 +127,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Verificar se é possível gerenciar sub-rotinas mesmo após início da rotina. |
 | Passos | - Acessar rotina em andamento <br> - Clicar em “Adicionar sub-rotina” <br> - Preencher dados <br> - Salvar |
 | Critério de êxito | - Sub-rotina salva corretamente e refletida na tela da rotina principal. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste |Bernardo Garcia|
 
 <br>
 
@@ -137,7 +137,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Verificar se é possível atribuir recursos à tarefa ao criar a rotina. |
 | Passos | - Criar uma nova rotina com tarefa <br> - Acessar a tarefa <br> - Clicar em “Adicionar recursos” <br> - Selecionar e salvar |
 | Critério de êxito | - Recursos são corretamente atribuídos à tarefa e listados. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste |Bernardo Garcia|
 
 <br>
 
@@ -147,7 +147,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Verificar se o usuário pode alterar recursos após a rotina estar em execução. |
 | Passos | - Acessar rotina em andamento <br> - Acessar a tarefa desejada <br> - Adicionar/remover recurso <br> - Confirmar |
 | Critério de êxito | - Alterações são refletidas e salvas corretamente. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste |Bernardo Garcia|
 
 <br>
 
@@ -157,7 +157,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Verificar se é possível administrar os recursos disponíveis no sistema. |
 | Passos | - Acessar menu de recursos/insumos <br> - Clicar em “Adicionar”, “Editar” ou “Excluir” <br> - Salvar |
 | Critério de êxito | - Ações refletem corretamente na lista de recursos disponíveis para tarefas. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste | Bernardo Garcia |
 
 <br>
 
@@ -167,7 +167,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Verificar se ao iniciar a tarefa os insumos são atualizados. |
 | Passos | - Atribuir recurso à tarefa <br> - Iniciar tarefa <br> - Verificar saldo no sistema |
 | Critério de êxito | - Quantidade do recurso diminui corretamente no estoque. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste | Bernardo Garcia |
 
 <br>
 
@@ -177,7 +177,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Validar se os recursos são liberados (ou atualizados) corretamente ao final da tarefa. |
 | Passos | - Finalizar tarefa <br> - Verificar atualização do recurso no estoque |
 | Critério de êxito | - Quantidade do recurso alterada corretamente conforme lógica definida. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste | Bernardo Garcia |
 
 <br>
 
@@ -187,7 +187,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Garantir que o sistema impeça execução de tarefas sem insumos disponíveis. |
 | Passos | - Criar tarefa com insumo indisponível <br> - Tentar iniciar execução |
 | Critério de êxito | - Sistema bloqueia a tarefa e exibe mensagem de erro. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste | Bernardo Garcia |
 
 <br>
 
@@ -197,7 +197,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Verificar se a filtragem de rotinas funciona conforme critérios. |
 | Passos | - Acessar lista de rotinas <br> - Aplicar filtros por status, responsável, tipo e datas <br> - Observar os resultados |
 | Critério de êxito | - A listagem exibe apenas rotinas que atendem aos critérios de filtro. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste | Bernardo Garcia |
 
 <br>
 
@@ -207,7 +207,7 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Verificar se o relatório de tempo da rotina é gerado corretamente. |
 | Passos | - Acessar rotina concluída <br> - Clicar em “Gerar Relatório de Tempo” |
 | Critério de êxito | - Relatório é exibido com tempos parciais e totais corretamente. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste | Bernardo Garcia |
 
 <br>
 
@@ -217,4 +217,4 @@ Não deixe de enumerar os casos de teste de forma sequencial e garantir que o(s)
 | Objetivo do teste | Validar se o sistema gera relatórios com consumo, saldo e movimentação de insumos. |
 | Passos | - Acessar módulo de relatórios <br> - Selecionar “Relatório de Insumos” <br> - Definir período ou filtros <br> - Gerar |
 | Critério de êxito | - Relatório exibido com informações corretas e exportáveis. |
-| Responsável pela elaboração do caso de teste | Nome do integrante da equipe. |
+| Responsável pela elaboração do caso de teste |Bernardo Garcia|
